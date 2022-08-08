@@ -4,13 +4,13 @@ require('dotenv').config({
 });
 
 module.exports = {
-    pathPrefix: `/blog`,
+    pathPrefix: `/`,
     siteMetadata: {
         title: 'Tiramisu',
         description: 'Social network of kindness',
         siteUrl: 'https://tiramisu.gatsbyjs.io', // full path to blog - no ending slash
         apiKey: process.env.SCOPED_FLOTIQ_API_KEY,
-        pathPrefix: process.env.NODE_ENV === 'production' ? '/blog' : '',
+        pathPrefix: process.env.NODE_ENV === 'production' ? '/' : '',
     },
     plugins: [
         'gatsby-plugin-sass',
@@ -66,7 +66,7 @@ module.exports = {
             resolve: 'gatsby-plugin-robots-txt',
             options: {
                 host: 'https://tiramisu.gatsbyjs.io',
-                sitemap: 'https://tiramisu.gatsbyjs.io/blog/sitemap.xml',
+                sitemap: 'https://tiramisu.gatsbyjs.io/sitemap.xml',
                 policy: [{ userAgent: '*', allow: '/' }],
             },
         },
