@@ -65,8 +65,8 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-robots-txt',
             options: {
-                host: 'https://flotiq.com',
-                sitemap: 'https://flotiq.com/blog/sitemap.xml',
+                host: 'https://tiramisu.gatsbyjs.io',
+                sitemap: 'https://tiramisu.gatsbyjs.io/blog/sitemap.xml',
                 policy: [{ userAgent: '*', allow: '/' }],
             },
         },
