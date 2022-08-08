@@ -37,6 +37,7 @@
         &.store-img {
           padding: 1.2em 0 0 0;
           height: unset;
+          width:150px;
         }
       }
     }
@@ -207,9 +208,8 @@
       &.instagram {
         em:before {
           content: url('../assets/instagram.svg');
-          width: 12px;
-          height: 12px;
-          margin-right: 3px;
+          margin-top: 7px;
+          margin-left: 1px;
         }
         &:hover {
           background: #FE62AC;
@@ -234,6 +234,7 @@
     }
     .store-img {
       margin: 10px 40px 30px 0;
+      width:150px;
     }
   }
 
