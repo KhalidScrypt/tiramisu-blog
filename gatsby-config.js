@@ -4,7 +4,7 @@ require('dotenv').config({
 });
 
 module.exports = {
-    pathPrefix: '/blog',
+    pathPrefix: `/blog`,
     siteMetadata: {
         title: 'Tiramisu',
         description: 'Social network of kindness',
