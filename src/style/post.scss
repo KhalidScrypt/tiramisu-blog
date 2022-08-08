@@ -1,0 +1,147 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "variables";
+@import "typography";
+
+.post-date {
+  font-size: 14px;
+  line-height: 20px;
+  @include font-weight(semi-bold);
+  color: $gray-3;
+}
+
+.author-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $gray-3;
+  &-image {
+    margin: 0 20px;
+  }
+  a {
+    @include font-weight(semi-bold);
+  }
+}
+
+.post-image {
+  border-radius: 10px;
+}
+
+.floating-socials {
+  position: sticky;
+  top: 100px;
+  margin-bottom: 60px;
+}
+
+.bottom-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &-title {
+    color: $gray-3;
+    @include font-weight(semi-bold);
+  }
+  .socials-item {
+    margin: 20px 10px 0 10px;
+  }
+}
+
+.join-newsletter-floating {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  #mc_embed_signup {
+    margin-left: 20px;
+    margin-right: -20px;
+  }
+}
+
+.related {
+  display: flex;
+  justify-content: space-between;
+  .see-all {
+    display: block;
+    color: $primary;
+    padding-right: 30px;
+    position: relative;
+    &:after {
+      content: url("../assets/text-arrow.svg");
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+.post-reading {
+  height: 68px;
+  position: sticky;
+  z-index: 1030;
+  background: white;
+  top: 0;
+  padding-right: 0;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  transition: height ease-in-out .2s;
+
+  &-content {
+    display: flex;
+    align-items: center;
+    padding-left: 70px;
+    img {
+      height: 50px;
+      margin-right: 40px;
+    }
+  }
+  &-progress {
+    height: 5px;
+    background: $primary;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .post-reading {
+    height: 3px !important;
+    background-color: transparent;
+    &-content {
+      display: none;
+    }
+    &-progress {
+      height: 3px;
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .related-posts {
+    overflow-x: scroll;
+    margin-right: calc(0px - #{$paddingBig});
+    margin-left: calc(0px - #{$paddingBig});
+    padding-left: $paddingBig;
+    padding-right: $paddingBig;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
+    }
+    & > .row {
+      flex-wrap: nowrap;
+      & > .col {
+        max-width: 80%;
+      }
+    }
+    .post-card,
+    .post-card:hover {
+      padding: 0;
+    }
+  }
+}

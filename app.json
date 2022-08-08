@@ -1,0 +1,19 @@
+{
+  "name": "Flotiq blog",
+  "env":{
+    "FLOTIQ_API_KEY": {
+      "description": "Flotiq API key"
+    },
+    "SCOPED_FLOTIQ_API_KEY": {
+      "description": "Flotiq API key for search"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-static"
+    }
+  ]
+}

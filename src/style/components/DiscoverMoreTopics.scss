@@ -1,0 +1,57 @@
+.discover {
+  display: flex;
+  align-items: flex-start;
+
+  h4 {
+    white-space: nowrap;
+    margin: 15px 15px 0 0;
+  }
+
+  .btn {
+    display: inline-block;
+    margin: 10px 5px;
+    white-space: nowrap;
+    a {
+      color: $white;
+    }
+    &--white {
+      a {
+        color: $primary;
+      }
+    }
+    &:hover {
+      a {
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .discover {
+    display: block;
+
+    h4 {
+      white-space: normal;
+      margin: 15px 15px 5px 0;
+    }
+    .discover-tags {
+      margin-left: calc(0px - #{$paddingBig});
+      margin-right: calc(0px - #{$paddingBig});
+      display: flex;
+      overflow-x: scroll;
+
+      .btn:first-child {
+        margin-left: $paddingBig;
+      }
+      .btn:last-child {
+         margin-right: $paddingBig;
+      }
+      &::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+      }
+    }
+  }
+}

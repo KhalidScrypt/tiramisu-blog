@@ -1,0 +1,23 @@
+$grid-gutter-width: 40px;
+@import '~flotiq-components-react/dist/index-including-tailwind.css';
+@import '~bootstrap/scss/bootstrap';
+@import '~highlight.js/scss/default';
+@import '~highlight.js/scss/nord';
+
+@import 'variables';
+@import 'global';
+@import 'typography';
+@import 'post';
+
+@import './components/Button';
+@import './components/CookieInfo';
+@import './components/DiscoverMoreTopics';
+@import './components/JoinNewsletter';
+@import './components/Navbar';
+@import './components/Pagination';
+@import './components/PostCard';
+@import './components/SharePostButtons';
+@import './components/TagPill';
+
+@import './sections/Footer';
+@import './sections/Content';

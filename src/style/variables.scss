@@ -1,0 +1,37 @@
+// COLORS
+
+$white: #FFFFFF;
+$light-blue: #E9F3FF;
+$gray-3: #8EA1B8;
+$gray-border-light: #C2C8D0;
+$primary: #93165d;
+$primary-2: #93165d;
+$secondary: #c96035;
+$dark-blue: #555555;
+$dark: #555555;
+$gradient-1-start: #93165d;
+$gradient-1-end: #931633;
+$gradient-2-start: #93165d;
+$gradient-2-end: #931633;
+$gradient-3-start: #93165d;
+$gradient-3-end: #931633;
+
+// BOX SHADOWS
+
+$default-box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
+$dark-box-shadow: 0 4px 20px rgba(0, 0, 0, .2);
+
+$default-color-transition: background-color .2s, color .2s ease-in-out;
+$default-opacity-transition: opacity .2s, color .2s ease-in-out;
+
+// GRADIENTS
+
+$gradient-1: linear-gradient(90deg, $gradient-1-start 20%, $gradient-1-end 100%);
+$gradient-1-reversed: linear-gradient(90deg, $gradient-1-end 20%, $gradient-1-start 100%);
+$gradient-2: linear-gradient(90deg, $gradient-2-start 10%, $gradient-2-end 80%);
+$gradient-2-reversed: linear-gradient(90deg, $gradient-2-end 10%, $gradient-2-start 80%);
+
+
+// CONTAINER
+$paddingBig: calc(15px + 0.5rem);
+$paddingBigger: calc(15px + 0.5rem);

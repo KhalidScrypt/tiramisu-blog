@@ -1,0 +1,37 @@
+@import 'variables';
+@import 'typography';
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+@font-face {
+  font-family: "HalvarBreitschrift-Bold";
+  src: url('../assets/fonts/Halvar-Breitschrift-Bold.eot');
+  src: url('../assets/fonts/Halvar-Breitschrift-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/Halvar-Breitschrift-Bold.woff2') format('woff2'),
+  url('../assets/fonts/Halvar-Breitschrift-Bold.woff') format('woff');
+  @include font-weight(regular);
+  font-style: normal;
+}
+
+html,body {
+  font-family: 'Inter', sans-serif;
+  color: $dark-blue;
+}
+
+.container-fluid__bigger-padding {
+  padding-right: $paddingBigger;
+  padding-left: $paddingBigger;
+  min-height: 20vh;
+
+  @include media-breakpoint-down(sm) {
+    padding-right: $paddingBig;
+    padding-left: $paddingBig;
+  }
+
+}
+
+.light-blue-background {
+  background: $light-blue;
+}
