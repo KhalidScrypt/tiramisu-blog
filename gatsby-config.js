@@ -3,6 +3,8 @@ require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`,
 });
 
+const siteUrl = process.env.URL || `https://tiramisu.gatsbyjs.io`;
+
 module.exports = {
     pathPrefix: `/`,
     siteMetadata: {
