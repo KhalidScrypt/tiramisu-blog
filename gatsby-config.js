@@ -8,7 +8,7 @@ module.exports = {
     siteMetadata: {
         title: 'Tiramisu',
         description: 'Social network of kindness',
-        siteUrl: 'https://www.tiramisuapp.com', // full path to blog - no ending slash
+        siteUrl: 'https://tiramisu.gatsbyjs.io', // full path to blog - no ending slash
         apiKey: process.env.SCOPED_FLOTIQ_API_KEY,
         pathPrefix: process.env.NODE_ENV === 'production' ? '/blog' : '',
     },
