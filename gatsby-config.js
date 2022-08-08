@@ -6,13 +6,13 @@ require('dotenv').config({
 const siteUrl = process.env.URL || `https://tiramisu.gatsbyjs.io`;
 
 module.exports = {
-    pathPrefix: `/`,
+    pathPrefix: '',
     siteMetadata: {
         title: 'Tiramisu',
         description: 'Social network of kindness',
         siteUrl: 'https://tiramisu.gatsbyjs.io', // full path to blog - no ending slash
         apiKey: process.env.SCOPED_FLOTIQ_API_KEY,
-        pathPrefix: process.env.NODE_ENV === 'production' ? '/blog' : '',
+        pathPrefix: process.env.NODE_ENV === 'production' ? '' : '',
     },
     plugins: [
         'gatsby-plugin-sass',
