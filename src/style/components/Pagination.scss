@@ -14,22 +14,26 @@
     margin: 0 10px;
     color: $gray-3;
   }
+  .page-item.active .page-link {
+    background-color: $primary;
+  }
   .page-item:first-child .page-link {
-    content: url('../assets/text-arrow.svg');
+    content: url('../assets/arrow.svg');
     transform: rotate(180deg);
     margin: 0 30px;
   }
   .page-item:last-child .page-link {
-    content: url('../assets/text-arrow.svg');
+    content: url('../assets/arrow.svg');
     margin: 0 30px;
   }
   .page-item:first-child.disabled .page-link {
-    content: url('../assets/text-arrow-gray.svg');
+    content: url('../assets/arrow-gray.svg');
     transform: rotate(180deg);
   }
   .page-item:last-child.disabled .page-link {
-    content: url('../assets/text-arrow-gray.svg');
+    content: url('../assets/arrow-gray.svg');
   }
+
 
   @include media-breakpoint-down(sm) {
     .page-item:first-child .page-link,

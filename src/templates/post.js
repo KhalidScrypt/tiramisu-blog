@@ -48,7 +48,7 @@ const PostPage = ({ data, pageContext }) => {
         setProgressBar(width <= 100 ? width : 100);
     }, [offset]);
     if (!post) {
-        return (<div>NO DATA</div>);
+        return <div>NO DATA</div>;
     }
     const disqusConfig = {
         url: `${data.site.siteMetadata.siteUrl}/${post.slug}`,
@@ -65,91 +65,165 @@ const PostPage = ({ data, pageContext }) => {
                     {data.allFlotiqMainSettings.nodes[0].title}
                 </title>
                 <meta name="description" content={post.metaDescription} />
-                <meta property="og:site_name" content={data.allFlotiqMainSettings.nodes[0].title} />
+                <meta
+                    property="og:site_name"
+                    content={data.allFlotiqMainSettings.nodes[0].title}
+                />
                 <meta property="og:type" content="article" />
-                <meta property="og:title" content={`${post.title} - ${data.allFlotiqMainSettings.nodes[0].title}`} />
-                <meta property="og:description" content={post.metaDescription} />
+                <meta
+                    property="og:title"
+                    content={`${post.title} - ${data.allFlotiqMainSettings.nodes[0].title}`}
+                />
+                <meta
+                    property="og:description"
+                    content={post.metaDescription}
+                />
                 <meta property="og:url" content={url} />
-                {(post.headerImage) && (
+                {post.headerImage && (
                     <meta
                         property="og:image"
-                        content={data.site.siteMetadata.siteUrl + post.headerImage[0].localFile.publicURL}
+                        content={
+                            data.site.siteMetadata.siteUrl +
+                            post.headerImage[0].localFile.publicURL
+                        }
                     />
                 )}
-                <meta property="article:published_time" content={post.publish_date} />
+                <meta
+                    property="article:published_time"
+                    content={post.publish_date}
+                />
                 {post.tags && (
-                    <meta property="article:tag" content={post.tags[0].tag_name} />
+                    <meta
+                        property="article:tag"
+                        content={post.tags[0].tag_name}
+                    />
                 )}
 
                 {data.allFlotiqMainSettings.nodes[0].facebook_url && (
-                    <meta property="article:publisher" content={data.allFlotiqMainSettings.nodes[0].facebook_url} />)}
+                    <meta
+                        property="article:publisher"
+                        content={
+                            data.allFlotiqMainSettings.nodes[0].facebook_url
+                        }
+                    />
+                )}
                 {data.allFlotiqMainSettings.nodes[0].facebook_url && (
-                    <meta property="article:author" content={data.allFlotiqMainSettings.nodes[0].facebook_url} />)}
+                    <meta
+                        property="article:author"
+                        content={
+                            data.allFlotiqMainSettings.nodes[0].facebook_url
+                        }
+                    />
+                )}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content={`${post.title} - ${data.allFlotiqMainSettings.nodes[0].title}`} />
-                <meta name="twitter:description" content={post.metaDescription} />
+                <meta
+                    name="twitter:title"
+                    content={`${post.title} - ${data.allFlotiqMainSettings.nodes[0].title}`}
+                />
+                <meta
+                    name="twitter:description"
+                    content={post.metaDescription}
+                />
                 <meta name="twitter:url" content={url} />
-                {(post.headerImage) && (
+                {post.headerImage && (
                     <meta
                         name="twitter:image"
-                        content={data.site.siteMetadata.siteUrl + post.headerImage[0].localFile.publicURL}
+                        content={
+                            data.site.siteMetadata.siteUrl +
+                            post.headerImage[0].localFile.publicURL
+                        }
                     />
                 )}
                 <meta name="twitter:label1" content="Written by" />
                 <meta name="twitter:data1" content={post.author[0].name} />
                 <meta name="twitter:label2" content="Filed under" />
-                {post.tags && <meta name="twitter:data2" content={post.tags[0].tag} />}
-                {data.allFlotiqMainSettings.nodes[0].twitter_url
-                && (
+                {post.tags && (
+                    <meta name="twitter:data2" content={post.tags[0].tag} />
+                )}
+                {data.allFlotiqMainSettings.nodes[0].twitter_url && (
                     <meta
                         name="twitter:site"
-                        content={`@${data.allFlotiqMainSettings.nodes[0].twitter_url.split('https://twitter.com/')[1]}`}
+                        content={`@${
+                            data.allFlotiqMainSettings.nodes[0].twitter_url.split(
+                                'https://twitter.com/'
+                            )[1]
+                        }`}
                     />
                 )}
                 {data.allFlotiqMainSettings.nodes[0].twitter_url && (
                     <meta
                         name="twitter:creator"
-                        content={`@${data.allFlotiqMainSettings.nodes[0].twitter_url.split('https://twitter.com/')[1]}`}
+                        content={`@${
+                            data.allFlotiqMainSettings.nodes[0].twitter_url.split(
+                                'https://twitter.com/'
+                            )[1]
+                        }`}
                     />
                 )}
-                {post.headerImage[0] && <meta property="og:image:width" content={post.headerImage[0].width} />}
-                {post.headerImage[0] && <meta property="og:image:height" content={post.headerImage[0].height} />}
+                {post.headerImage[0] && (
+                    <meta
+                        property="og:image:width"
+                        content={post.headerImage[0].width}
+                    />
+                )}
+                {post.headerImage[0] && (
+                    <meta
+                        property="og:image:height"
+                        content={post.headerImage[0].height}
+                    />
+                )}
             </Helmet>
             <div ref={progress}>
                 <Container
                     fluid
                     className="post-reading"
-                    style={{ opacity: visible ? 1 : 0, height: `${progressHeight}px` }}
+                    style={{
+                        opacity: visible ? 1 : 0,
+                        height: `${progressHeight}px`,
+                    }}
                 >
                     <div className="post-reading-content">
-                        <Link to="/"><img src={Sygnet} alt="Tiramisu"/></Link>
+                        <Link to="/">
+                            <img src={Sygnet} alt="Tiramisu" />
+                        </Link>
                         <div>
-                            <p><strong>{post.title}</strong></p>
-                            <span className="reading-time">{getReadingTime(post.content.blocks)}</span>
+                            <p>
+                                <strong>{post.title}</strong>
+                            </p>
+                            <span className="reading-time">
+                                {getReadingTime(post.content.blocks)}
+                            </span>
                         </div>
                     </div>
-                    <div className="post-reading-progress" style={{ width: `${progressBar}%` }} />
+                    <div
+                        className="post-reading-progress"
+                        style={{ width: `${progressBar}%` }}
+                    />
                 </Container>
                 <Container>
                     <p className="text-center post-date pt-4 pb-4">
-                        {moment(post.publish_date).format('DD MMM YYYY') }
+                        {moment(post.publish_date).format('DD MMM YYYY')}
                     </p>
-                    <h1 className="text-center px-0 px-sm-3 px-md-5">{post.title}</h1>
+                    <h1 className="text-center px-0 px-sm-3 px-md-5">
+                        {post.title}
+                    </h1>
                     <div className="text-center py-4">
                         {post.tags.map((tag) => (
-                            <TagPill tag={tag} key={tag.id} />))}
+                            <TagPill tag={tag} key={tag.id} />
+                        ))}
                     </div>
                     <h4 className="text-center pb-4 pb-sm-5">{post.excerpt}</h4>
                     <div className="author-box pb-4 pb-sm-5">
-                        <span className="reading-time">{getReadingTime(post.content.blocks)}</span>
+                        <span className="reading-time">
+                            {getReadingTime(post.content.blocks)}
+                        </span>
                         <GatsbyImage
                             alt={post.author[0].name}
                             image={getImage(post.author[0].avatar[0].localFile)}
                             className="author-box-image"
                         />
                         <span>
-                            By
-                            {' '}
+                            By{' '}
                             <Link to={`/author/${post.author[0].slug}`}>
                                 {post.author[0].name}
                             </Link>
@@ -172,7 +246,9 @@ const PostPage = ({ data, pageContext }) => {
                             <Content
                                 blocks={post.content.blocks}
                                 quoteProps={{ variant: 'light' }}
-                                tableProps={{ additionalClasses: ['custom-table'] }}
+                                tableProps={{
+                                    additionalClasses: ['custom-table'],
+                                }}
                                 highlight={highlight}
                             />
                         </Col>
@@ -185,7 +261,9 @@ const PostPage = ({ data, pageContext }) => {
                     <Col lg={1} md={1} sm={0} xs={0} />
                     <Col>
                         <div className="mt-5 mb-3 text-center">
-                            <p className="link-s bottom-socials-title">Share this article</p>
+                            <p className="link-s bottom-socials-title">
+                                Share this article
+                            </p>
                             <div className="bottom-socials">
                                 <SharePostButtons />
                             </div>
@@ -203,8 +281,7 @@ const PostPage = ({ data, pageContext }) => {
                     <>
                         <h4 className="related mb-4">
                             <strong>
-                                Posts related to
-                                {' '}
+                                Posts related to{' '}
                                 <Link to={`/tags/${post.tags[0].tag}`}>
                                     {post.tags[0].tag_name}
                                 </Link>
@@ -218,11 +295,19 @@ const PostPage = ({ data, pageContext }) => {
                         </h4>
                         <div className="related-posts">
                             <Row xs={1} sm={1} md={3} lg={3}>
-                                {data.relatedPostsFromTags.nodes.map((relatedPost) => (
-                                    <Col key={relatedPost.id}>
-                                        <PostCard post={relatedPost} pathPrefix={data.site.siteMetadata.pathPrefix} />
-                                    </Col>
-                                ))}
+                                {data.relatedPostsFromTags.nodes.map(
+                                    (relatedPost) => (
+                                        <Col key={relatedPost.id}>
+                                            <PostCard
+                                                post={relatedPost}
+                                                pathPrefix={
+                                                    data.site.siteMetadata
+                                                        .pathPrefix
+                                                }
+                                            />
+                                        </Col>
+                                    )
+                                )}
                             </Row>
                         </div>
                     </>
@@ -242,13 +327,13 @@ const PostPage = ({ data, pageContext }) => {
 export default PostPage;
 
 export const query = graphql`
-    query($slug: String, $primaryTag: String) {
+    query ($slug: String, $primaryTag: String) {
         site {
             siteMetadata {
                 siteUrl
             }
         }
-        flotiqBlogPost( slug: { eq: $slug }, status: {eq: "public"} ) {
+        flotiqBlogPost(slug: { eq: $slug }, status: { eq: "public" }) {
             excerpt
             title
             publish_date
@@ -332,7 +417,11 @@ export const query = graphql`
             }
         }
         relatedPostsFromTags: allFlotiqBlogPost(
-            filter:{tags: {elemMatch: {tag: {eq:  $primaryTag } } }, status: {eq: "public"}, slug: {ne: $slug} }
+            filter: {
+                tags: { elemMatch: { tag: { eq: $primaryTag } } }
+                status: { eq: "public" }
+                slug: { ne: $slug }
+            }
             limit: 3
         ) {
             totalCount
