@@ -106,6 +106,10 @@ h5 {
   font-weight: 400;
 }
 
+a {
+  color: $primary;
+}
+
 .text {
   &-s {
     line-height: 140%;
@@ -133,15 +137,18 @@ h5 {
   &-s {
     line-height: 20px;
     font-size: 14px;
+    color: $primary;
   }
 
   &-m {
     line-height: 130%;
+    color: $primary;
     @include fluid-type(320px, 1920px, 16px, 18px);
   }
 
   &-l {
-    line-height: 130%;
+    line-height: 130%;    
+    color: $primary;
     @include fluid-type(320px, 1920px, 20px, 24px);
   }
 }
