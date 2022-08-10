@@ -6,7 +6,11 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const result = await graphql(`
         query MainQuery {
-            allFlotiqBlogPost(sort: {fields: publish_date, order: DESC}, limit: 10000, filter: {status: {eq: "public"}}) {
+            allFlotiqBlogPost(
+                sort: { fields: publish_date, order: DESC }
+                limit: 10000
+                filter: { status: { eq: "public" } }
+            ) {
                 edges {
                     node {
                         id
@@ -54,6 +58,13 @@ exports.createPages = async ({ graphql, actions }) => {
         throw new Error(result.errors);
     }
 
+    // Create Homepage
+
+    createPage({
+        path: '/',
+        component: path.resolve('./src/templates/index.js'),
+    });
+
     // Create post pages
     const posts = result.data.allFlotiqBlogPost.edges;
 
@@ -63,8 +74,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
     Array.from({ length: numPages }).forEach((item, i) => {
         createPage({
-            path: i === 0 ? '/' : `/${i + 1}`,
-            component: path.resolve('./src/templates/index.js'),
+            path: i === 0 ? '/blog' : `/blog/${i + 1}`,
+            component: path.resolve('./src/templates/blog.js'),
             context: {
                 limit: postsPerPage,
                 skip: i * postsPerPage,
@@ -87,14 +98,14 @@ exports.createPages = async ({ graphql, actions }) => {
         const next = index === posts.length - 1 ? null : posts[index + 1].node;
 
         createPage({
-            path: slug,
+            path: `/blog/${slug}`,
             component: path.resolve('./src/templates/post.js'),
             context: {
                 // Data passed to context is available in page queries as GraphQL variables.
                 slug,
                 prev,
                 next,
-                primaryTag: (node.tags && node.tags[0]) ? node.tags[0].tag : '',
+                primaryTag: node.tags && node.tags[0] ? node.tags[0].tag : '',
                 tags,
             },
         });
@@ -105,7 +116,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     tags.forEach((tag) => {
         createPage({
-            path: `/tags/${tag.tag}/`,
+            path: `/blog/tags/${tag.tag}/`,
             component: tagTemplate,
             context: {
                 tag: tag.tag,
@@ -118,7 +129,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const authorTemplate = path.resolve('./src/templates/author.js');
     result.data.allFlotiqBlogAuthor.edges.forEach((edge) => {
         createPage({
-            path: `/author/${_.kebabCase(edge.node.slug)}/`,
+            path: `/blog/author/${_.kebabCase(edge.node.slug)}/`,
             component: authorTemplate,
             context: {
                 author: edge.node.slug,

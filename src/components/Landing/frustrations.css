@@ -1,0 +1,107 @@
+.frustrations-frustrations {
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.frustrations-text {
+  align-self: center;
+}
+.frustrations-stats {
+  width: 100%;
+  display: grid;
+  padding: var(--dl-space-space-threeunits);
+  grid-gap: var(--dl-space-space-twounits);
+  max-width: var(--dl-size-size-maxwidth);
+  align-self: center;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.frustrations-stat {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.frustrations-text01 {
+  color: #FF7C4C;
+  font-size: 3rem;
+}
+.frustrations-text02 {
+  color: var(--dl-color-scheme-lightblue);
+}
+.frustrations-text03 {
+  font-size: 1.15rem;
+  margin-top: var(--dl-space-space-halfunit);
+  text-align: center;
+}
+.frustrations-stat1 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.frustrations-text04 {
+  color: #FF7C4C;
+  font-size: 3rem;
+}
+.frustrations-text05 {
+  color: var(--dl-color-scheme-lightblue);
+}
+.frustrations-text06 {
+  font-size: 1.15rem;
+  margin-top: var(--dl-space-space-halfunit);
+  text-align: center;
+}
+.frustrations-stat2 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.frustrations-text07 {
+  color: #FF7C4C;
+  font-size: 3rem;
+}
+.frustrations-text08 {
+  color: var(--dl-color-scheme-lightblue);
+}
+.frustrations-text09 {
+  font-size: 1.15rem;
+  margin-top: var(--dl-space-space-halfunit);
+  text-align: center;
+}
+@media(max-width: 991px) {
+  .frustrations-text01 {
+    text-align: center;
+  }
+  .frustrations-text04 {
+    text-align: center;
+  }
+  .frustrations-text07 {
+    text-align: center;
+  }
+}
+@media(max-width: 767px) {
+  .frustrations-stats {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+    grid-template-columns: 1fr 1fr;
+  }
+  .frustrations-text03 {
+    text-align: center;
+  }
+  .frustrations-text06 {
+    text-align: center;
+  }
+  .frustrations-text09 {
+    text-align: center;
+  }
+}
+@media(max-width: 479px) {
+  .frustrations-stats {
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
+    padding-bottom: var(--dl-space-space-twounits);
+    grid-template-columns: 1fr;
+  }
+}

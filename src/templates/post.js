@@ -246,6 +246,7 @@ const PostPage = ({ data, pageContext }) => {
                             <Content
                                 blocks={post.content.blocks}
                                 quoteProps={{ variant: 'light' }}
+                                delimiterProps={{ variant: 'light' }}
                                 tableProps={{
                                     additionalClasses: ['custom-table'],
                                 }}
