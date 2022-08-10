@@ -2,6 +2,8 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import VideoCall from '../../assets/playground_assets/videocall3-300w.png';
+
 import './why-tiramisu.css';
 
 const WhyTiramisu = (props) => {
@@ -78,7 +80,7 @@ const WhyTiramisu = (props) => {
                     <div className="why-tiramisu-image-container">
                         <img
                             alt={props.Image_alt}
-                            src={props.Image_src}
+                            src={VideoCall}
                             loading="lazy"
                             className="why-tiramisu-image floating"
                         />

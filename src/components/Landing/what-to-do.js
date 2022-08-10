@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 
 import './what-to-do.css';
 
+import Activity from '../../assets/playground_assets/activities-1100w.png';
+import Request from '../../assets/playground_assets/16-request-6-e1653414754516-1100w.png';
+import Volunteer from '../../assets/playground_assets/pastedimage-03w-1100w.png';
+
 const WhatToDo = (props) => {
     return (
         <div className="what-to-do-what-do-do section-container">
@@ -27,7 +31,7 @@ const WhatToDo = (props) => {
                 <div className="what-to-do-image-container">
                     <img
                         alt={props.Image_alt}
-                        src={props.Image_src}
+                        src={Request}
                         loading="lazy"
                         className="what-to-do-image floating"
                     />
@@ -53,7 +57,7 @@ const WhatToDo = (props) => {
                 <div className="what-to-do-image-container1">
                     <img
                         alt={props.Image_alt1}
-                        src={props.Image_src1}
+                        src={Activity}
                         loading="lazy"
                         className="what-to-do-image1 floating"
                     />
@@ -63,7 +67,7 @@ const WhatToDo = (props) => {
                 <div className="what-to-do-image-container2">
                     <img
                         alt={props.Image_alt2}
-                        src={props.Image_src2}
+                        src={Activity}
                         loading="lazy"
                         className="what-to-do-image2 floating"
                     />
@@ -107,7 +111,7 @@ const WhatToDo = (props) => {
                 <div className="what-to-do-image-container3">
                     <img
                         alt={props.Image_alt3}
-                        src={props.Image_src3}
+                        src={Volunteer}
                         loading="lazy"
                         className="what-to-do-image3 floating"
                     />

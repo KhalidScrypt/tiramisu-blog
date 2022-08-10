@@ -3,6 +3,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './hero.css';
+import Hero1 from '../../assets/playground_assets/hero11-400w.png';
+import Hero2 from '../../assets/playground_assets/hero21-400w.png';
+import Hero3 from '../../assets/playground_assets/hero3-700w.png';
+import Android from '../../assets/playground_assets/android-200h.png';
+import Appstore from '../../assets/playground_assets/appstore-200h.png';
 
 const Hero = (props) => {
     return (
@@ -10,7 +15,7 @@ const Hero = (props) => {
             <div className="hero-container">
                 <img
                     alt={props.image_alt}
-                    src={props.image_src}
+                    src={Hero2}
                     loading="lazy"
                     className="hero-image floating"
                 />
@@ -50,25 +55,25 @@ const Hero = (props) => {
                     <div className="hero-container3">
                         <img
                             alt={props.image_alt3}
-                            src={props.image_src3}
+                            src={Android}
                             className="hero-image1"
                         />
                         <img
                             alt={props.image_alt4}
-                            src={props.image_src4}
+                            src={Appstore}
                             className="hero-image2"
                         />
                     </div>
                     <img
                         alt={props.image_alt2}
-                        src={props.image_src2}
+                        src={Hero3}
                         loading="lazy"
                         className="hero-image3 floating"
                     />
                 </div>
                 <img
                     alt={props.image_alt1}
-                    src={props.image_src1}
+                    src={Hero1}
                     loading="lazy"
                     className="hero-image4 floating"
                 />
