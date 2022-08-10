@@ -12,13 +12,13 @@ const DiscoverMoreTopics = ({ tags, primaryTag }) => (
             {tags.map((tag) => (
                 <Button
                     additionalClasses={
-                        tag.tag === primaryTag ? [] : ['btn--white', 'btn__with-border']
+                        tag.tag === primaryTag
+                            ? []
+                            : ['btn--white', 'btn__with-border']
                     }
                     key={tag.id}
                 >
-                    <Link to={`/tags/${tag.tag}`}>
-                        {tag.tag_name}
-                    </Link>
+                    <Link to={`/blog/tags/${tag.tag}`}>{tag.tag_name}</Link>
                 </Button>
             ))}
         </div>

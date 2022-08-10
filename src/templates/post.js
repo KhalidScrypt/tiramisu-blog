@@ -224,7 +224,7 @@ const PostPage = ({ data, pageContext }) => {
                         />
                         <span>
                             By{' '}
-                            <Link to={`/author/${post.author[0].slug}`}>
+                            <Link to={`/blog/author/${post.author[0].slug}`}>
                                 {post.author[0].name}
                             </Link>
                         </span>
@@ -283,12 +283,12 @@ const PostPage = ({ data, pageContext }) => {
                         <h4 className="related mb-4">
                             <strong>
                                 Posts related to{' '}
-                                <Link to={`/tags/${post.tags[0].tag}`}>
+                                <Link to={`/blog/tags/${post.tags[0].tag}`}>
                                     {post.tags[0].tag_name}
                                 </Link>
                             </strong>
                             <Link
-                                to={`/tags/${post.tags[0].tag}`}
+                                to={`/blog/tags/${post.tags[0].tag}`}
                                 className="see-all"
                             >
                                 See all
