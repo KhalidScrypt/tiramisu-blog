@@ -205,7 +205,7 @@
   flex-direction: column;
   background-size: contain;
   justify-content: center;
-  background-image: url("/playground_assets/1-500h.png");
+  background-image: url("../../assets/playground_assets/1-500h.png");
   background-repeat: no-repeat;
   background-position: right;
 }

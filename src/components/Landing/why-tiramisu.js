@@ -90,7 +90,7 @@ const WhyTiramisu = (props) => {
 };
 
 WhyTiramisu.defaultProps = {
-    Image_src: '/playground_assets/videocall3-300w.png',
+    Image_src: '../../assets/playground_assets/videocall3-300w.png',
     Image_alt: 'image',
     text: 'Tiramisu respects your privacy and puts content moderation first.',
     text1: 'Instead of followers, we focus on real connection & support',
