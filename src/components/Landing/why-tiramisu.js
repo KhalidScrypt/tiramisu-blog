@@ -3,12 +3,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import VideoCall from '../../assets/playground_assets/videocall3-300w.png';
+import { motion } from 'framer-motion';
 
 import './why-tiramisu.css';
 
 const WhyTiramisu = (props) => {
     return (
-        <div className="why-tiramisu-why-tiramisu">
+        <motion.div
+            className="why-tiramisu-why-tiramisu"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ ease: 'easeIn', duration: 1 }}
+        >
             <h1 className="why-tiramisu-text heading2">
                 <span>Why Tiramisu?</span>
             </h1>
@@ -87,7 +94,7 @@ const WhyTiramisu = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

@@ -1,30 +1,62 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+import { motion } from 'framer-motion';
 
 import './frustrations.css';
 
 const Frustrations = (props) => {
+    const percentage1 = 32;
+    const percentage2 = 30;
+
     return (
-        <div className="frustrations-frustrations">
+        <motion.div
+            className="frustrations-frustrations"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ ease: 'easeIn', duration: 1 }}
+        >
             <h1 className="frustrations-text heading2">{props.heading}</h1>
             <div className="frustrations-stats">
                 <div className="frustrations-stat">
-                    <h1 className="frustrations-text01">
-                        <span className="frustrations-text02">32%</span>
-                    </h1>
+                    <CircularProgressbar
+                        value={percentage2}
+                        text={`${percentage1}%`}
+                        strokeWidth="5"
+                        styles={buildStyles({
+                            pathColor: '#93165d',
+                            textColor: '#93165d',
+                        })}
+                    />
                     <span className="frustrations-text03">{props.text}</span>
                 </div>
                 <div className="frustrations-stat1">
-                    <h1 className="frustrations-text04">
-                        <span className="frustrations-text05">30%</span>
-                    </h1>
+                    <CircularProgressbar
+                        value={percentage2}
+                        text={`${percentage2}%`}
+                        strokeWidth="5"
+                        styles={buildStyles({
+                            pathColor: '#93165d',
+                            textColor: '#93165d',
+                            pathTransitionDuration: 2,
+                        })}
+                    />
+
                     <span className="frustrations-text06">{props.text1}</span>
                 </div>
                 <div className="frustrations-stat2">
-                    <h1 className="frustrations-text07">
-                        <span className="frustrations-text08">30%</span>
-                    </h1>
+                    <CircularProgressbar
+                        value={percentage2}
+                        text={`${percentage2}%`}
+                        strokeWidth="5"
+                        styles={buildStyles({
+                            pathColor: '#93165d',
+                            textColor: '#93165d',
+                        })}
+                    />
                     <span className="frustrations-text09">
                         <span>The number of ads I see</span>
                         <br></br>
@@ -32,7 +64,7 @@ const Frustrations = (props) => {
                     </span>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

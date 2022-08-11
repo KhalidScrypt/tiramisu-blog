@@ -11,8 +11,8 @@
 .frustrations-stats {
   width: 100%;
   display: grid;
-  padding: var(--dl-space-space-threeunits);
-  grid-gap: var(--dl-space-space-twounits);
+  padding: var(--dl-space-space-fourunits);
+  grid-gap: var(--dl-space-space-fiveunits);
   max-width: var(--dl-size-size-maxwidth);
   align-self: center;
   grid-template-columns: 1fr 1fr 1fr;

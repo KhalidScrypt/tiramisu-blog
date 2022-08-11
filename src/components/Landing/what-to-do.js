@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 
 import './what-to-do.css';
 
@@ -11,7 +12,13 @@ import Volunteer from '../../assets/playground_assets/pastedimage-03w-1100w.png'
 const WhatToDo = (props) => {
     return (
         <div className="what-to-do-what-do-do section-container">
-            <div className="what-to-do-presentation1 fadeIn">
+            <motion.div
+                className="what-to-do-presentation1"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ ease: 'easeIn', duration: 1 }}
+            >
                 <div className="what-to-do-text-container">
                     <div className="what-to-do-container">
                         <div className="what-to-do-container1">
@@ -36,8 +43,14 @@ const WhatToDo = (props) => {
                         className="what-to-do-image floating"
                     />
                 </div>
-            </div>
-            <div className="what-to-do-presentation1mobile fadeIn">
+            </motion.div>
+            <motion.div
+                className="what-to-do-presentation1mobile"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ ease: 'easeIn', duration: 1 }}
+            >
                 <div className="what-to-do-text-container1">
                     <div className="what-to-do-container2">
                         <div className="what-to-do-container3">
@@ -62,8 +75,14 @@ const WhatToDo = (props) => {
                         className="what-to-do-image1 floating"
                     />
                 </div>
-            </div>
-            <div className="what-to-do-presentation2 fadeIn">
+            </motion.div>
+            <motion.div
+                className="what-to-do-presentation2"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ ease: 'easeIn', duration: 1 }}
+            >
                 <div className="what-to-do-image-container2">
                     <img
                         alt={props.Image_alt2}
@@ -88,8 +107,14 @@ const WhatToDo = (props) => {
                         </span>
                     </span>
                 </div>
-            </div>
-            <div className="what-to-do-presentation3 fadeIn">
+            </motion.div>
+            <motion.div
+                className="what-to-do-presentation3"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ ease: 'easeIn', duration: 1 }}
+            >
                 <div className="what-to-do-text-container3">
                     <div className="what-to-do-container6">
                         <div className="what-to-do-container7">
@@ -116,7 +141,7 @@ const WhatToDo = (props) => {
                         className="what-to-do-image3 floating"
                     />
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };

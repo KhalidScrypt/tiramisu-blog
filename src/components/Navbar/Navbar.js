@@ -38,13 +38,7 @@ const CustomNavbar = () => {
                 </Navbar.Brand>
                 <div className="mobile-header-right">
                     <Nav className="d-inline d-md-none">
-                        <Button
-                            click={() =>
-                                window.open(
-                                    'https://www.tiramisuapp.com/download'
-                                )
-                            }
-                        >
+                        <Button click={() => window.open('/download')}>
                             <Nav.Item>Get the app</Nav.Item>
                         </Button>
                     </Nav>
@@ -123,24 +117,14 @@ const CustomNavbar = () => {
                                 </Button>
                             </form>
                         </Nav.Item> */}
-                        <Button
-                            click={() =>
-                                window.open(
-                                    'https://www.tiramisuapp.com/download'
-                                )
-                            }
-                        >
+                        <Button click={() => window.open('/download')}>
                             <Nav.Item>Get the app</Nav.Item>
                         </Button>
                     </Nav>
                     <div className="d-md-none d-lg-none bottom-mobile-nav">
                         <div>
                             <Button
-                                click={() =>
-                                    window.open(
-                                        'https://www.tiramisuapp.com/download'
-                                    )
-                                }
+                                click={() => window.open('/download')}
                                 additionalClasses={['btn-mobile-big']}
                             >
                                 <Nav.Item>Get the app</Nav.Item>

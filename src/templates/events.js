@@ -5,11 +5,11 @@ import { Helmet } from 'react-helmet';
 
 import JoinNewsletter from '../components/JoinNewsletter/JoinNewsletter';
 import Pagination from '../components/Pagination/Pagination';
-import PostCard from '../components/PostCard/PostCard';
+import EventCard from '../components/EventCard/EventCard';
 import Layout from '../layouts/layout';
 
-const IndexPage = ({ data, pageContext }) => {
-    const posts = data.allEvents.nodes;
+const EventsPage = ({ data, pageContext }) => {
+    const events = data.allEvents.nodes;
     const siteMeta = data.site.siteMetadata;
     const skip = pageContext.currentPage === 1 ? 3 : 0;
     const [url, setUrl] = useState('');
@@ -110,22 +110,22 @@ const IndexPage = ({ data, pageContext }) => {
                     <>
                         <Row>
                             <Col lg={8} md={8} sm={12} sx={12}>
-                                <PostCard
-                                    post={posts[0]}
-                                    key={posts[0].id}
+                                <EventCard
+                                    event={events[0]}
+                                    key={events[0].id}
                                     showDescription
                                     additionalClass="post-card__no-height"
                                 />
                             </Col>
                             <Col>
-                                <PostCard
-                                    post={posts[1]}
-                                    key={posts[1].id}
+                                <EventCard
+                                    event={events[1]}
+                                    key={events[1].id}
                                     additionalClass="post-card__no-height"
                                 />
-                                <PostCard
-                                    post={posts[2]}
-                                    key={posts[2].id}
+                                <EventCard
+                                    event={events[2]}
+                                    key={events[2].id}
                                     additionalClass="post-card__no-height"
                                 />
                             </Col>
@@ -134,10 +134,10 @@ const IndexPage = ({ data, pageContext }) => {
                     </>
                 )}
                 <Row xs={1} sm={1} md={2} lg={3}>
-                    {posts.map((post, index) =>
+                    {events.map((post, index) =>
                         index >= skip ? (
                             <Col key={post.id}>
-                                <PostCard post={post} />
+                                <EventCard post={post} />
                             </Col>
                         ) : null
                     )}
@@ -152,23 +152,20 @@ const IndexPage = ({ data, pageContext }) => {
     );
 };
 
-export default IndexPage;
+export default EventsPage;
 
 export const pageQuery = graphql`
     query eventPageQuery($skip: Int!, $limit: Int!) {
         allEvents(
-            sort: { fields: [date], order: DESC }
+            sort: { fields: date, order: DESC }
             limit: $limit
             skip: $skip
-            filter: { status: { eq: "public" } }
         ) {
+            totalCount
             nodes {
-                id
-                slug
-                title
-                date
                 content {
                     blocks {
+                        id
                         data {
                             caption
                             code
@@ -177,9 +174,6 @@ export const pageQuery = graphql`
                                 content
                                 items {
                                     content
-                                    items {
-                                        content
-                                    }
                                 }
                             }
                             message
@@ -188,6 +182,9 @@ export const pageQuery = graphql`
                         }
                     }
                 }
+                date
+                slug
+                title
                 headerImage {
                     extension
                     url

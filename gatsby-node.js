@@ -50,47 +50,16 @@ exports.createPages = async ({ graphql, actions }) => {
                     }
                 }
             }
-            allEvents(
-                sort: { fields: date, order: DESC }
-                limit: 1000
-                filter: { status: { eq: "public" } }
-            ) {
-                nodes {
-                    id
-                    slug
-                    title
-                    date
-                    content {
-                        blocks {
-                            data {
-                                caption
-                                code
-                                content
-                                items {
-                                    content
-                                    items {
-                                        content
-                                        items {
-                                            content
-                                        }
-                                    }
-                                }
-                                message
-                                text
-                                title
-                            }
-                        }
-                    }
-                    headerImage {
-                        extension
-                        url
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData(layout: FULL_WIDTH)
-                            }
-                        }
+
+            allEvents(sort: { fields: date, order: DESC }, limit: 1000) {
+                edges {
+                    node {
+                        id
+                        slug
+                        status
                     }
                 }
+                totalCount
             }
         }
     `);
@@ -101,10 +70,15 @@ exports.createPages = async ({ graphql, actions }) => {
     }
 
     // Create Homepage
-
     createPage({
         path: '/',
         component: path.resolve('./src/templates/index.js'),
+    });
+
+    // Create Download page
+    createPage({
+        path: '/download',
+        component: path.resolve('./src/templates/download.js'),
     });
 
     // Create post pages
@@ -158,43 +132,35 @@ exports.createPages = async ({ graphql, actions }) => {
 
     // Create paginated index
     const eventsPerPage = 9;
-    const numEventPages = Math.ceil(posts.length / postsPerPage);
+    const numEventPages = Math.ceil(events.length / eventsPerPage);
 
-    Array.from({ length: numPages }).forEach((item, i) => {
+    Array.from({ length: numEventPages }).forEach((item, i) => {
         createPage({
             path: i === 0 ? '/events' : `/events/${i + 1}`,
             component: path.resolve('./src/templates/events.js'),
             context: {
                 limit: eventsPerPage,
                 skip: i * eventsPerPage,
-                numPages,
+                numEventPages,
                 currentPage: i + 1,
             },
         });
     });
-    // const tmpTags = {};
-    // posts.forEach((edge) => {
-    //     edge.node.tags.forEach((tag) => {
-    //         tmpTags[tag.id] = tag;
-    //     });
-    // });
-    //const tags = Object.values(tmpTags);
 
-    posts.forEach(({ node }, index) => {
+    events.forEach(({ node }, index) => {
         const { slug } = node;
-        const prev = index === 0 ? null : posts[index - 1].node;
-        const next = index === posts.length - 1 ? null : posts[index + 1].node;
+        const prev = index === 0 ? null : events[index - 1].node;
+        const next =
+            index === events.length - 1 ? null : events[index + 1].node;
 
         createPage({
             path: `/events/${slug}`,
-            component: path.resolve('./src/templates/post.js'),
+            component: path.resolve('./src/templates/event.js'),
             context: {
                 // Data passed to context is available in page queries as GraphQL variables.
                 slug,
                 prev,
                 next,
-                primaryTag: node.tags && node.tags[0] ? node.tags[0].tag : '',
-                tags,
             },
         });
     });

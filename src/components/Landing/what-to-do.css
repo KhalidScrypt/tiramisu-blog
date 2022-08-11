@@ -148,7 +148,7 @@
   padding-left: 50px;
   padding-right: 50px;
   flex-direction: column;
-  background-size: cover;
+  background-size: contain;
   justify-content: center;
   background-image: url("../../assets/playground_assets/3-1500w.png");
   background-repeat: no-repeat;
@@ -181,7 +181,7 @@
   padding-left: 50px;
   padding-right: 50px;
   flex-direction: column;
-  background-size: cover;
+  background-size: contain;
   justify-content: center;
   background-image: url("../../assets/playground_assets/3-1500w.png");
   background-repeat: no-repeat;
@@ -308,7 +308,7 @@
   padding-left: 50px;
   padding-right: 50px;
   flex-direction: column;
-  background-size: cover;
+  background-size: contain;
   justify-content: center;
   background-image: url("../../assets/playground_assets/2-1500w.png");
   background-repeat: no-repeat;

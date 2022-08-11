@@ -8,7 +8,7 @@ import Pagination from '../components/Pagination/Pagination';
 import PostCard from '../components/PostCard/PostCard';
 import Layout from '../layouts/layout';
 
-const IndexPage = ({ data, pageContext }) => {
+const BlogPage = ({ data, pageContext }) => {
     const posts = data.allFlotiqBlogPost.nodes;
     const siteMeta = data.site.siteMetadata;
     const skip = pageContext.currentPage === 1 ? 3 : 0;
@@ -20,29 +20,42 @@ const IndexPage = ({ data, pageContext }) => {
         <Layout>
             <Helmet>
                 <html lang="en" />
-                <title>
-                    Tiramisu - Social Network of Kindness
-                </title>
+                <title>Tiramisu - Social Network of Kindness</title>
                 <meta
                     name="description"
-                    content={'Tiramisu\'s blog share content and news about the company, wellbeing and social impact '
-                        + `${pageContext.currentPage > 1
-                            ? ` - Page ${pageContext.currentPage}` : ''}`}
+                    content={
+                        "Tiramisu's blog share content and news about the company, wellbeing and social impact " +
+                        `${
+                            pageContext.currentPage > 1
+                                ? ` - Page ${pageContext.currentPage}`
+                                : ''
+                        }`
+                    }
                 />
                 {pageContext.currentPage > 1 && (
                     <link
                         rel="prev"
-                        href={`${siteMeta.siteUrl}${siteMeta.pathPrefix}/${pageContext.currentPage - 1}`}
+                        href={`${siteMeta.siteUrl}${siteMeta.pathPrefix}/${
+                            pageContext.currentPage - 1
+                        }`}
                     />
                 )}
                 {pageContext.currentPage + 1 < pageContext.numPages && (
                     <link
                         rel="next"
-                        href={`${siteMeta.siteUrl}${siteMeta.pathPrefix}/${pageContext.currentPage + 1}`}
+                        href={`${siteMeta.siteUrl}${siteMeta.pathPrefix}/${
+                            pageContext.currentPage + 1
+                        }`}
                     />
                 )}
-                <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css"/>
-                <meta property="og:site_name" content={data.allFlotiqMainSettings.nodes[0].title} />
+                <link
+                    rel="stylesheet"
+                    href="https://sibforms.com/forms/end-form/build/sib-styles.css"
+                />
+                <meta
+                    property="og:site_name"
+                    content={data.allFlotiqMainSettings.nodes[0].title}
+                />
                 <meta property="og:type" content="website" />
                 <meta
                     property="og:title"
@@ -50,26 +63,45 @@ const IndexPage = ({ data, pageContext }) => {
                 />
                 <meta property="og:url" content={url} />
                 {data.allFlotiqMainSettings.nodes[0].facebook_url && (
-                    <meta property="article:publisher" content={data.allFlotiqMainSettings.nodes[0].facebook_url} />)}
+                    <meta
+                        property="article:publisher"
+                        content={
+                            data.allFlotiqMainSettings.nodes[0].facebook_url
+                        }
+                    />
+                )}
                 {data.allFlotiqMainSettings.nodes[0].facebook_url && (
-                    <meta property="article:author" content={data.allFlotiqMainSettings.nodes[0].facebook_url} />)}
+                    <meta
+                        property="article:author"
+                        content={
+                            data.allFlotiqMainSettings.nodes[0].facebook_url
+                        }
+                    />
+                )}
                 <meta name="twitter:card" content="summary" />
                 <meta
                     name="twitter:title"
                     content="Tiramisu - Social Network of Kindness"
                 />
                 <meta name="twitter:url" content={url} />
-                {data.allFlotiqMainSettings.nodes[0].twitter_url
-                && (
+                {data.allFlotiqMainSettings.nodes[0].twitter_url && (
                     <meta
                         name="twitter:site"
-                        content={`@${data.allFlotiqMainSettings.nodes[0].twitter_url.split('https://twitter.com/')[1]}`}
+                        content={`@${
+                            data.allFlotiqMainSettings.nodes[0].twitter_url.split(
+                                'https://twitter.com/'
+                            )[1]
+                        }`}
                     />
                 )}
                 {data.allFlotiqMainSettings.nodes[0].twitter_url && (
                     <meta
                         name="twitter:creator"
-                        content={`@${data.allFlotiqMainSettings.nodes[0].twitter_url.split('https://twitter.com/')[1]}`}
+                        content={`@${
+                            data.allFlotiqMainSettings.nodes[0].twitter_url.split(
+                                'https://twitter.com/'
+                            )[1]
+                        }`}
                     />
                 )}
             </Helmet>
@@ -102,31 +134,33 @@ const IndexPage = ({ data, pageContext }) => {
                     </>
                 )}
                 <Row xs={1} sm={1} md={2} lg={3}>
-                    {posts.map((post, index) => (index >= skip ? (
-                        <Col key={post.id}>
-                            <PostCard post={post} />
-                        </Col>
-                    ) : null))}
+                    {posts.map((post, index) =>
+                        index >= skip ? (
+                            <Col key={post.id}>
+                                <PostCard post={post} />
+                            </Col>
+                        ) : null
+                    )}
                 </Row>
-                {pageContext.currentPage !== 1 && (
-                    <JoinNewsletter addMargin />
-                )}
-                <Pagination page={pageContext.currentPage} numOfPages={pageContext.numPages} />
+                {pageContext.currentPage !== 1 && <JoinNewsletter addMargin />}
+                <Pagination
+                    page={pageContext.currentPage}
+                    numOfPages={pageContext.numPages}
+                />
             </Container>
         </Layout>
-        
     );
 };
 
-export default IndexPage;
+export default BlogPage;
 
 export const pageQuery = graphql`
     query blogPageQuery($skip: Int!, $limit: Int!) {
         allFlotiqBlogPost(
-            sort: { fields: [publish_date], order: DESC },
-            limit: $limit,
-            skip: $skip,
-            filter: {status: {eq: "public"}}
+            sort: { fields: [publish_date], order: DESC }
+            limit: $limit
+            skip: $skip
+            filter: { status: { eq: "public" } }
         ) {
             nodes {
                 id
