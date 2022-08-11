@@ -53,6 +53,7 @@ module.exports = {
                     'flotiqBlogPost',
                     'flotiqBlogTag',
                     'features',
+                    'events',
                 ],
             },
         },
