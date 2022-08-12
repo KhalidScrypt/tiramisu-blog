@@ -82,6 +82,7 @@
 .hero-image3 {
   width: 60%;
   object-fit: cover;
+  margin-top: 32px;
 }
 .hero-image4 {
   width: 25%;

@@ -63,8 +63,6 @@ const WhyTiramisu = (props) => {
                                 <span className="why-tiramisu-text11">
                                     human interaction
                                 </span>
-                                <span className="why-tiramisu-text12"></span>
-                                <span className="why-tiramisu-text13"></span>
                             </h1>
                             <span className="why-tiramisu-text14">
                                 {props.text1}
@@ -81,8 +79,6 @@ const WhyTiramisu = (props) => {
                                     />
                                 </span>
                                 <span className="why-tiramisu-text17">ads</span>
-                                <span className="why-tiramisu-text18"></span>
-                                <span className="why-tiramisu-text19"></span>
                             </h1>
                             <span className="why-tiramisu-text20">
                                 {props.text11}

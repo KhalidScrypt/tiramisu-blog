@@ -1,4 +1,5 @@
 .why-tiramisu-why-tiramisu {
+  width:100%;
   display: flex;
   position: relative;
   margin-top: 100px;
@@ -59,15 +60,18 @@
   font-style: normal;
   text-align: left;
   font-weight: 700;
+  font-size: 34px;
 }
 .why-tiramisu-text04 {
   color: var(--dl-color-scheme-lightblue);
   font-style: normal;
   font-weight: 700;
+  font-size: 34px;
 }
 .why-tiramisu-text05 {
   font-style: normal;
   font-weight: 700;
+  font-size: 34px;
 }
 .why-tiramisu-text06 {
   font-style: normal;
@@ -87,6 +91,7 @@
   font-weight: 500;
   padding-left: 20px;
   padding-right: 20px;
+  width: 90%;
 }
 .why-tiramisu-reason-2 {
   width: 100%;
@@ -115,22 +120,16 @@
   font-style: normal;
   text-align: left;
   font-weight: 700;
+  font-size: 34px;
 }
 .why-tiramisu-text11 {
   color: var(--dl-color-scheme-lightblue);
   font-style: normal;
   font-weight: 700;
+  font-size: 34px;
+
 }
-.why-tiramisu-text12 {
-  font-style: normal;
-  text-align: left;
-  font-weight: 700;
-}
-.why-tiramisu-text13 {
-  font-style: normal;
-  text-align: left;
-  font-weight: 700;
-}
+
 .why-tiramisu-text14 {
   font-size: 18px;
   font-style: normal;
@@ -139,6 +138,7 @@
   font-weight: 500;
   padding-left: 20px;
   padding-right: 20px;
+  width: 90%;
 }
 .why-tiramisu-reason-21 {
   width: 100%;
@@ -167,11 +167,13 @@
   font-style: normal;
   text-align: left;
   font-weight: 700;
+  font-size: 34px;
 }
 .why-tiramisu-text17 {
   color: var(--dl-color-scheme-lightblue);
   font-style: normal;
   font-weight: 700;
+  font-size: 34px;
 }
 .why-tiramisu-text18 {
   font-style: normal;
@@ -191,6 +193,7 @@
   font-weight: 500;
   padding-left: 20px;
   padding-right: 20px;
+  width: 90%;
 }
 .why-tiramisu-image-container {
   flex: 1;

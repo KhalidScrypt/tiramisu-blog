@@ -23,7 +23,7 @@ const IndexPage = (props) => {
     const youtubeUrl =
         'https://www.youtube.com/channel/UChheETRXMsgGeUatnik2s6w';
     return (
-        <div className="home-container">
+        <Layout>
             <Helmet>
                 <html lang="en" />
                 <title>Tiramisu - Social Network of Kindness</title>
@@ -66,15 +66,15 @@ const IndexPage = (props) => {
                     content={`@${twitterUrl.split('https://twitter.com/')[1]}`}
                 />
             </Helmet>
-            <main className="home-main">
-                <Layout>
+            <main className="home-container">
+                <div className="home-main">
                     <Hero></Hero>
                     <WhatToDo></WhatToDo>
                     <Frustrations></Frustrations>
                     <WhyTiramisu></WhyTiramisu>
-                </Layout>
+                </div>
             </main>
-        </div>
+        </Layout>
     );
 };
 
