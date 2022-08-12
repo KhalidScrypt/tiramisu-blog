@@ -1,12 +1,19 @@
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
+import { motion } from 'framer-motion';
 
 import { getReadingTime } from '../../helpers/readingTime';
 import TagPill from '../TagPill/TagPill';
 
 const PostCard = ({ post, showDescription, additionalClass }) => (
-    <div className={`post-card pb-4 ${additionalClass}`}>
+    <motion.div
+        className={`post-card pb-4 ${additionalClass}`}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ ease: 'easeIn', duration: 1 }}
+    >
         <div>
             <Link to={`/blog/${post.slug}`} className="post-card-link">
                 {
@@ -50,7 +57,7 @@ const PostCard = ({ post, showDescription, additionalClass }) => (
                 </p>
             </Link>
         )}
-    </div>
+    </motion.div>
 );
 
 export default PostCard;

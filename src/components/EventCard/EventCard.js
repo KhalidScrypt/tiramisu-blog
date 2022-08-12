@@ -1,9 +1,16 @@
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const EventCard = ({ event, showDescription, additionalClass }) => (
-    <div className={`event-card pb-4 ${additionalClass}`}>
+    <motion.div
+        className={`event-card pb-4 ${additionalClass}`}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ ease: 'easeIn', duration: 1 }}
+    >
         <div>
             <Link to={`/events/${event.slug}`} className="event-card-link">
                 {
@@ -37,7 +44,7 @@ const EventCard = ({ event, showDescription, additionalClass }) => (
                 )}
             </Link>
         </div>
-    </div>
+    </motion.div>
 );
 
 export default EventCard;
