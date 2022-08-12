@@ -40,12 +40,12 @@
     font-size: 16px;
     margin-right: 30px;
     justify-content: flex-start;
-    background-image: url("../assets/send.png");
+    background-image: url("../assets/send1.svg");
 
     @include font-weight(semi-bold);
     &:after {
       content: '';
-      background-image: url("../assets/send.png");
+      background-image: url("../assets/send1.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: 20px 20px;
