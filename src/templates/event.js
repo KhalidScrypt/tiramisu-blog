@@ -7,6 +7,7 @@ import moment from 'moment';
 import React, { useEffect, useRef, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
+import Button from '../components/Button/Button';
 
 import Sygnet from '../assets/logo.png';
 import JoinNewsletter from '../components/JoinNewsletter/JoinNewsletter';
@@ -162,29 +163,6 @@ const EventPage = ({ data, pageContext }) => {
                 )}
             </Helmet>
             <div ref={progress}>
-                <Container
-                    fluid
-                    className="post-reading"
-                    style={{
-                        opacity: visible ? 1 : 0,
-                        height: `${progressHeight}px`,
-                    }}
-                >
-                    <div className="post-reading-content">
-                        <Link to="/">
-                            <img src={Sygnet} alt="Tiramisu" />
-                        </Link>
-                        <div>
-                            <p>
-                                <strong>{event.title}</strong>
-                            </p>
-                        </div>
-                    </div>
-                    <div
-                        className="post-reading-progress"
-                        style={{ width: `${progressBar}%` }}
-                    />
-                </Container>
                 <Container>
                     <p className="text-center post-date pt-4 pb-4">
                         {moment(event.date).format('DD MMM YYYY')}
@@ -192,6 +170,18 @@ const EventPage = ({ data, pageContext }) => {
                     <h1 className="text-center px-0 px-sm-3 px-md-5">
                         {event.title}
                     </h1>
+                    <div
+                        style={{
+                            'padding-top': '40px',
+                            display: 'flex',
+                            'justify-content': 'center',
+                            'align-items': 'center',
+                        }}
+                    >
+                        <Button click={() => window.open(event.signupUrl)}>
+                            Join the event
+                        </Button>
+                    </div>
 
                     <h4 className="text-center pb-4 pb-sm-5">
                         {event.excerpt}
@@ -270,6 +260,7 @@ export const query = graphql`
                 createdAt
                 updatedAt
             }
+            signupUrl
             content {
                 blocks {
                     data {
