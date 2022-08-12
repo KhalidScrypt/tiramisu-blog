@@ -3,14 +3,14 @@ require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`,
 });
 
-const siteUrl = process.env.URL || `https://tiramisu.gatsbyjs.io`;
+const siteUrl = process.env.URL || `https://www.tiramisuapp.com`;
 
 module.exports = {
     pathPrefix: '',
     siteMetadata: {
         title: 'Tiramisu',
         description: 'Social network of kindness',
-        siteUrl: 'https://tiramisu.gatsbyjs.io', // full path to blog - no ending slash
+        siteUrl: 'https://www.tiramisuapp.com', // full path to blog - no ending slash
         apiKey: process.env.SCOPED_FLOTIQ_API_KEY,
         pathPrefix: process.env.NODE_ENV === 'production' ? '' : '',
     },
@@ -70,8 +70,9 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-robots-txt',
             options: {
-                host: 'https://tiramisu.gatsbyjs.io',
-                sitemap: 'https://tiramisu.gatsbyjs.io/sitemap/sitemap-0.xml',
+                host: 'www.tiramisuapp.com',
+                sitemap:
+                    'https://www.tiramisuapp.com/sitemap/sitemap-index.xml',
                 policy: [{ userAgent: '*', allow: '/' }],
             },
         },
