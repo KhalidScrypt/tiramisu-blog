@@ -58,6 +58,9 @@ const Footer = () => {
                     <div className="main-footer-subfooter--opacity text-s">
                         © {year} Tiramisu
                     </div>
+                    <a href="javascript:window.Confirmic('ConsentManager:show')">
+                        manage cookies
+                    </a>
 
                     <FooterSocials data={data.allFlotiqMainSettings.nodes[0]} />
                 </div>
