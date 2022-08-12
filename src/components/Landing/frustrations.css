@@ -99,8 +99,8 @@
 @media(max-width: 479px) {
   .frustrations-stats {
     padding-top: var(--dl-space-space-twounits);
-    padding-left: var(--dl-space-space-fourunit);
-    padding-right: var(--dl-space-space-fourunit);
+    padding-left: 30px;
+    padding-right: 30px;
     padding-bottom: var(--dl-space-space-units);
     grid-template-columns: 1fr;
   }
