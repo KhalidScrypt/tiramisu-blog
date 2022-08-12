@@ -191,6 +191,20 @@ exports.createPages = async ({ graphql, actions }) => {
             },
         });
     });
+
+    //Create Privacy Policy page
+    createPage({
+        path: `/privacy-policy`,
+        component: path.resolve('./src/templates/privacy.js'),
+        context: {},
+    });
+
+    //Create terms and conditions page
+    createPage({
+        path: `/terms-conditions`,
+        component: path.resolve('./src/templates/terms.js'),
+        context: {},
+    });
 };
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
