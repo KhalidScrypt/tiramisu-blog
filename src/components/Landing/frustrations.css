@@ -69,6 +69,10 @@
   margin-top: var(--dl-space-space-halfunit);
   text-align: center;
 }
+.circle-stats {
+  margin-left: 20px;
+  margin-right: 20px;
+}
 @media(max-width: 991px) {
   .frustrations-text01 {
     text-align: center;
@@ -99,9 +103,10 @@
 @media(max-width: 479px) {
   .frustrations-stats {
     padding-top: var(--dl-space-space-twounits);
-    padding-left: var(--dl-space-space-twounits);
-    padding-right: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-unit);
+    padding-right: var(--dl-space-space-unit);
     padding-bottom: var(--dl-space-space-twounits);
     grid-template-columns: 1fr;
   }
+
 }

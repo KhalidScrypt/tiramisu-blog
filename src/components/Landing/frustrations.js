@@ -16,13 +16,14 @@ const Frustrations = (props) => {
             className="frustrations-frustrations"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true }}
             transition={{ ease: 'easeIn', duration: 1 }}
         >
             <h1 className="frustrations-text heading2">{props.heading}</h1>
             <div className="frustrations-stats">
                 <div className="frustrations-stat">
                     <CircularProgressbar
+                        className="circle-stats"
                         value={percentage2}
                         text={`${percentage1}%`}
                         strokeWidth="5"
@@ -35,6 +36,7 @@ const Frustrations = (props) => {
                 </div>
                 <div className="frustrations-stat1">
                     <CircularProgressbar
+                        className="circle-stats"
                         value={percentage2}
                         text={`${percentage2}%`}
                         strokeWidth="5"
@@ -49,6 +51,7 @@ const Frustrations = (props) => {
                 </div>
                 <div className="frustrations-stat2">
                     <CircularProgressbar
+                        className="circle-stats"
                         value={percentage2}
                         text={`${percentage2}%`}
                         strokeWidth="5"

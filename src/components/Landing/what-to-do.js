@@ -16,7 +16,7 @@ const WhatToDo = (props) => {
                 className="what-to-do-presentation1"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: true }}
                 transition={{ ease: 'easeIn', duration: 1 }}
             >
                 <div className="what-to-do-text-container">
@@ -48,7 +48,7 @@ const WhatToDo = (props) => {
                 className="what-to-do-presentation1mobile"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: true }}
                 transition={{ ease: 'easeIn', duration: 1 }}
             >
                 <div className="what-to-do-text-container1">
@@ -80,7 +80,7 @@ const WhatToDo = (props) => {
                 className="what-to-do-presentation2"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: true }}
                 transition={{ ease: 'easeIn', duration: 1 }}
             >
                 <div className="what-to-do-image-container2">
@@ -112,7 +112,7 @@ const WhatToDo = (props) => {
                 className="what-to-do-presentation3"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0.5 }}
+                viewport={{ once: true }}
                 transition={{ ease: 'easeIn', duration: 1 }}
             >
                 <div className="what-to-do-text-container3">

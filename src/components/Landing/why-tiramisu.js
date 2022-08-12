@@ -13,7 +13,7 @@ const WhyTiramisu = (props) => {
             className="why-tiramisu-why-tiramisu"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true }}
             transition={{ ease: 'easeIn', duration: 1 }}
         >
             <h1 className="why-tiramisu-text heading2">
