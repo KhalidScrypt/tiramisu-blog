@@ -18,7 +18,7 @@ const Footer = () => {
                 <div className="d-xs-block d-sm-block d-md-none d-lg-none">
                     <div className="main-footer-header">
                         <div className="main-footer-header-logo">
-                            <img src={Logo} alt="" />
+                            <img src={Logo} alt="Tiramisu Logo" />
                         </div>
                         <p>
                             <strong>Download Tiramisu App</strong>

@@ -85,7 +85,7 @@ const IndexPage = (props) => {
                                 >
                                     <img
                                         src={Android}
-                                        alt="image"
+                                        alt="Download Tiramisu"
                                         className="home-image"
                                     />
                                 </a>
@@ -96,14 +96,14 @@ const IndexPage = (props) => {
                                 >
                                     <img
                                         src={Appstore}
-                                        alt="image"
+                                        alt="Download Tiramisu"
                                         className="home-image1"
                                     />
                                 </a>
                             </div>
                             <img
                                 src={QRCode}
-                                alt="image"
+                                alt="Download Tiramisu"
                                 className="home-image2"
                             />
                         </div>

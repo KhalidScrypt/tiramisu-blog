@@ -27,12 +27,12 @@ const CustomNavbar = () => {
                 <Navbar.Brand href={`${data.site.siteMetadata.pathPrefix}/`}>
                     <img
                         src={Logo}
-                        alt="Flotiq"
+                        alt="Tiramisu"
                         className="d-none d-lg-inline"
                     />
                     <img
                         src={Logo2}
-                        alt="Flotiq"
+                        alt="Tiramisu"
                         className="d-inline d-lg-none"
                     />
                 </Navbar.Brand>

@@ -1,9 +1,9 @@
 {
-  "name": "flotiq-blog",
+  "name": "tiramisu-website",
   "version": "1.0.0",
   "private": true,
-  "description": "Flotiq Blog",
-  "author": "Flotiq <hello@flotiq.com>",
+  "description": "Tiramisu Website",
+  "author": "Tiramisu <hello@tiramisuapp.com>",
   "keywords": [
     "gatsby"
   ],

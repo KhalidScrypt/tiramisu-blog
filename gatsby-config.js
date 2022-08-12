@@ -71,18 +71,11 @@ module.exports = {
             resolve: 'gatsby-plugin-robots-txt',
             options: {
                 host: 'https://tiramisu.gatsbyjs.io',
-                sitemap: 'https://tiramisu.gatsbyjs.io/sitemap.xml',
+                sitemap: 'https://tiramisu.gatsbyjs.io/sitemap/sitemap-0.xml',
                 policy: [{ userAgent: '*', allow: '/' }],
             },
         },
-        {
-            resolve: 'gatsby-plugin-hotjar',
-            options: {
-                includeInDevelopment: false, // optional parameter to include script in development
-                id: 2524177,
-                sv: 6,
-            },
-        },
+
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
