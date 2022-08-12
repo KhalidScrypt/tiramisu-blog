@@ -18,3 +18,10 @@
   background-image: url("../assets/playground_assets/bg_bulb.png");
   background-position: top right;
 }
+
+@media(max-width: 479px) {
+  .home-main  {
+    background-size: cover;
+    background-image: url("../assets/playground_assets/bg_bulb.png");
+  }
+}
