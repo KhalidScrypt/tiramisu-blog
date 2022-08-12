@@ -1,0 +1,44 @@
+.event-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: all .7s ease;
+  h2 {
+    padding-right: 30px;
+    transition: all .7s ease;
+  }
+  &-description {
+    padding-right: 30px;
+    transition: all .7s ease;
+  }
+  &-image {
+    border-radius: 10px;
+    max-width: 100%;
+  }
+  &__no-height {
+    height: unset;
+  }
+  &:hover {
+    padding: 15px;
+    h2 {
+      padding-right: 0;
+    }
+    .event-card-description {
+      padding-right: 0;
+    }
+  }
+  a.event-card-link {
+    color: $dark;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.reading-time {
+  font-size: 14px;
+  line-height: 20px;
+  color: $gray-3;
+  @include font-weight(semi-bold);
+}

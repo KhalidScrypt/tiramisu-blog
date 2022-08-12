@@ -231,7 +231,7 @@ const EventPage = ({ data, pageContext }) => {
                     <Col>
                         <div className="mt-5 mb-3 text-center">
                             <p className="link-s bottom-socials-title">
-                                Share this article
+                                Share this event
                             </p>
                             <div className="bottom-socials">
                                 <SharePostButtons />

@@ -5,7 +5,7 @@ import React from 'react';
 const EventCard = ({ event, showDescription, additionalClass }) => (
     <div className={`event-card pb-4 ${additionalClass}`}>
         <div>
-            <Link to={`/events/${event.slug}`} className="post-card-link">
+            <Link to={`/events/${event.slug}`} className="event-card-link">
                 {
                     // eslint-disable-next-line no-nested-ternary
                     event.headerImage ? (
@@ -15,23 +15,23 @@ const EventCard = ({ event, showDescription, additionalClass }) => (
                             <GatsbyImage
                                 image={getImage(event.headerImage[0].localFile)}
                                 alt={event.title}
-                                className="post-card-image"
+                                className="event-card-image"
                             />
                         ) : (
                             <img
                                 src={`https://api.flotiq.com${event.headerImage[0].url}`}
                                 alt={event.title}
-                                className="post-card-image"
+                                className="event-card-image"
                             />
                         )
                     ) : null
                 }
             </Link>
 
-            <Link to={`/events/${event.slug}`} className="post-card-link">
+            <Link to={`/events/${event.slug}`} className="event-card-link">
                 <h2 className="mt-3">{event.title}</h2>
                 {showDescription && (
-                    <div className="mt-3 post-card-description">
+                    <div className="mt-3 event-card-description">
                         {event.excerpt}
                     </div>
                 )}

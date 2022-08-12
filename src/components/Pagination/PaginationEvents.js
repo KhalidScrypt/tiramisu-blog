@@ -2,23 +2,22 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { Pagination } from 'react-bootstrap';
 
-const CustomPagination = ({ page, numOfPages, folder }) => {
+const CustomPaginationEvents = ({ page, numOfPages }) => {
     const data = useStaticQuery(query);
     const { pathPrefix } = data.site.siteMetadata;
-    var folder;
     return (
         <Pagination className="mb-5 pb-5">
             <Pagination.Prev
                 href={
                     page > 2
-                        ? `${pathPrefix}/${folder}/${page - 1}`
-                        : `${pathPrefix}/${folder}`
+                        ? `${pathPrefix}/events/${page - 1}`
+                        : `${pathPrefix}/events`
                 }
                 disabled={page === 1}
             />
             {page > 1 && (
                 <>
-                    <Pagination.Item href={`${pathPrefix}/${folder}/`}>
+                    <Pagination.Item href={`${pathPrefix}/events/`}>
                         {1}
                     </Pagination.Item>
                     {page > 4 && <Pagination.Ellipsis />}
@@ -26,12 +25,12 @@ const CustomPagination = ({ page, numOfPages, folder }) => {
             )}
 
             {page > 3 && (
-                <Pagination.Item href={`${pathPrefix}/${folder}/${page - 2}`}>
+                <Pagination.Item href={`${pathPrefix}/events/${page - 2}`}>
                     {page - 2}
                 </Pagination.Item>
             )}
             {page > 2 && (
-                <Pagination.Item href={`${pathPrefix}/${folder}/${page - 1}`}>
+                <Pagination.Item href={`${pathPrefix}/events/${page - 1}`}>
                     {page - 1}
                 </Pagination.Item>
             )}
@@ -39,12 +38,12 @@ const CustomPagination = ({ page, numOfPages, folder }) => {
                 {page}
             </Pagination.Item>
             {page < numOfPages - 1 && (
-                <Pagination.Item href={`${pathPrefix}/${folder}/${page + 1}`}>
+                <Pagination.Item href={`${pathPrefix}/events/${page + 1}`}>
                     {page + 1}
                 </Pagination.Item>
             )}
             {page < numOfPages - 2 && (
-                <Pagination.Item href={`${pathPrefix}/${folder}/${page + 2}`}>
+                <Pagination.Item href={`${pathPrefix}/events/${page + 2}`}>
                     {page + 2}
                 </Pagination.Item>
             )}
@@ -53,14 +52,14 @@ const CustomPagination = ({ page, numOfPages, folder }) => {
                 <>
                     {page < numOfPages - 3 && <Pagination.Ellipsis />}
                     <Pagination.Item
-                        href={`${pathPrefix}/${folder}/${numOfPages}`}
+                        href={`${pathPrefix}/events/${numOfPages}`}
                     >
                         {numOfPages}
                     </Pagination.Item>
                 </>
             )}
             <Pagination.Next
-                href={`${pathPrefix}/${folder}/${page + 1}`}
+                href={`${pathPrefix}/events/${page + 1}`}
                 disabled={page === numOfPages}
             />
         </Pagination>
@@ -68,7 +67,7 @@ const CustomPagination = ({ page, numOfPages, folder }) => {
 };
 
 const query = graphql`
-    query PaginationQuery {
+    query PaginationEventsQuery {
         site {
             siteMetadata {
                 pathPrefix
@@ -77,4 +76,4 @@ const query = graphql`
     }
 `;
 
-export default CustomPagination;
+export default CustomPaginationEvents;

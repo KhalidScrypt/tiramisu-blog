@@ -146,6 +146,7 @@ const BlogPage = ({ data, pageContext }) => {
                 <Pagination
                     page={pageContext.currentPage}
                     numOfPages={pageContext.numPages}
+                    folder="blog"
                 />
             </Container>
         </Layout>

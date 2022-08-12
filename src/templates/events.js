@@ -4,7 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 
 import JoinNewsletter from '../components/JoinNewsletter/JoinNewsletter';
-import Pagination from '../components/Pagination/Pagination';
+import PaginationEvent from '../components/Pagination/Pagination';
 import EventCard from '../components/EventCard/EventCard';
 import Layout from '../layouts/layout';
 
@@ -40,7 +40,7 @@ const EventsPage = ({ data, pageContext }) => {
                         }`}
                     />
                 )}
-                {pageContext.currentPage + 1 < pageContext.numPages && (
+                {pageContext.currentPage + 1 < pageContext.numEventPages && (
                     <link
                         rel="next"
                         href={`${siteMeta.siteUrl}${siteMeta.pathPrefix}/${
@@ -114,19 +114,19 @@ const EventsPage = ({ data, pageContext }) => {
                                     event={events[0]}
                                     key={events[0].id}
                                     showDescription
-                                    additionalClass="post-card__no-height"
+                                    additionalClass="event-card__no-height"
                                 />
                             </Col>
                             <Col>
                                 <EventCard
                                     event={events[1]}
                                     key={events[1].id}
-                                    additionalClass="post-card__no-height"
+                                    additionalClass="event-card__no-height"
                                 />
                                 <EventCard
                                     event={events[2]}
                                     key={events[2].id}
-                                    additionalClass="post-card__no-height"
+                                    additionalClass="event-card__no-height"
                                 />
                             </Col>
                         </Row>
@@ -143,9 +143,10 @@ const EventsPage = ({ data, pageContext }) => {
                     )}
                 </Row>
                 {pageContext.currentPage !== 1 && <JoinNewsletter addMargin />}
-                <Pagination
+                <PaginationEvent
                     page={pageContext.currentPage}
-                    numOfPages={pageContext.numPages}
+                    numOfPages={pageContext.numEventPages}
+                    folder="events"
                 />
             </Container>
         </Layout>
