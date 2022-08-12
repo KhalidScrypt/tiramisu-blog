@@ -26,7 +26,7 @@
 // HEADER DEFAULTS
 
 @mixin header-defaults-halvar {
-  font-family: 'HalvarBreitschrift-Bold', 'Inter', 'sans-serif';
+  font-family: 'raleway', 'Inter', 'sans-serif';
   @include font-weight(bold);
 }
 
