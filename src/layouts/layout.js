@@ -2,7 +2,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import CookieInfo from '../components/CookieInfo/CookieInfo';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../sections/Footer/Footer';
 
@@ -41,11 +40,6 @@ const Layout = ({ children, navbarSettings = {}, mainSettings = {} }) => {
             <Navbar {...navbarSettings} />
             {children}
             <Footer />
-            <CookieInfo
-                cookieText={
-                    data.allFlotiqMainSettings.nodes[0].cookie_policy_popup_text
-                }
-            />
         </main>
     );
 };

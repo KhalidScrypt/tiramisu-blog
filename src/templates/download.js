@@ -78,16 +78,28 @@ const IndexPage = (props) => {
                         </div>
                         <div className="home-container1">
                             <div className="home-container2">
-                                <img
-                                    src={Android}
-                                    alt="image"
-                                    className="home-image"
-                                />
-                                <img
-                                    src={Appstore}
-                                    alt="image"
-                                    className="home-image1"
-                                />
+                                <a
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    href="https://play.google.com/store/apps/details?id=com.tiramisuapp.tiramisu"
+                                >
+                                    <img
+                                        src={Android}
+                                        alt="image"
+                                        className="home-image"
+                                    />
+                                </a>
+                                <a
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    href="https://apps.apple.com/app/tiramisu-dare-to-care/id1559073613"
+                                >
+                                    <img
+                                        src={Appstore}
+                                        alt="image"
+                                        className="home-image1"
+                                    />
+                                </a>
                             </div>
                             <img
                                 src={QRCode}

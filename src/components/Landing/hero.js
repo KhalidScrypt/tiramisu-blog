@@ -53,16 +53,28 @@ const Hero = (props) => {
                         </span>
                     </span>
                     <div className="hero-container3">
-                        <img
-                            alt={props.image_alt3}
-                            src={Android}
-                            className="hero-image1"
-                        />
-                        <img
-                            alt={props.image_alt4}
-                            src={Appstore}
-                            className="hero-image2"
-                        />
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://play.google.com/store/apps/details?id=com.tiramisuapp.tiramisu"
+                        >
+                            <img
+                                alt={props.image_alt3}
+                                src={Android}
+                                className="hero-image1"
+                            />
+                        </a>
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://apps.apple.com/app/tiramisu-dare-to-care/id1559073613"
+                        >
+                            <img
+                                alt={props.image_alt4}
+                                src={Appstore}
+                                className="hero-image2"
+                            />
+                        </a>
                     </div>
                     <img
                         alt={props.image_alt2}

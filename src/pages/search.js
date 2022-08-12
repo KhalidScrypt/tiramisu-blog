@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 
-import CookieInfo from '../components/CookieInfo/CookieInfo';
 import DiscoverMoreTopics from '../components/DiscoverMoreTopics/DiscoverMoreTopics';
 import Navbar from '../components/Navbar/Navbar';
 import PostCard from '../components/PostCard/PostCard';
@@ -22,10 +21,12 @@ const SearchPage = ({ location }) => {
     });
     tags = Object.values(tags);
     useEffect(() => {
-        fetch(`https://api.flotiq.com/api/v1/search?q=${q}`
-            + '&fields%5B%5D=title^5&fields%5B%5D=content&page=1&limit=200'
-            + '&content_type%5B%5D=flotiqBlogPost&filters%5Bstatus%5D=public'
-            + `&auth_token=${siteMeta.site.siteMetadata.apiKey}`)
+        fetch(
+            `https://api.flotiq.com/api/v1/search?q=${q}` +
+                '&fields%5B%5D=title^5&fields%5B%5D=content&page=1&limit=200' +
+                '&content_type%5B%5D=flotiqBlogPost&filters%5Bstatus%5D=public' +
+                `&auth_token=${siteMeta.site.siteMetadata.apiKey}`
+        )
             .then((response) => response.json())
             .then((resultData) => {
                 if (resultData.data) {
@@ -33,14 +34,22 @@ const SearchPage = ({ location }) => {
                     resultData.data.forEach((data) => {
                         ids.push(data.item.id);
                     });
-                    fetch('https://api.flotiq.com/api/v1/content/flotiqBlogPost?limit=200&hydrate=1'
-                    + `&ids[]=${ids.join('&ids[]=')}&auth_token=${siteMeta.site.siteMetadata.apiKey}`)
+                    fetch(
+                        'https://api.flotiq.com/api/v1/content/flotiqBlogPost?limit=200&hydrate=1' +
+                            `&ids[]=${ids.join('&ids[]=')}&auth_token=${
+                                siteMeta.site.siteMetadata.apiKey
+                            }`
+                    )
                         .then((response) => response.json())
                         .then((resData) => {
                             if (resData.data) {
                                 const tmpPosts = [];
                                 ids.forEach((id) => {
-                                    tmpPosts.push(resData.data.find((data) => data.id === id));
+                                    tmpPosts.push(
+                                        resData.data.find(
+                                            (data) => data.id === id
+                                        )
+                                    );
                                 });
                                 setPosts(tmpPosts);
                             }
@@ -60,14 +69,8 @@ const SearchPage = ({ location }) => {
             <Navbar />
             <Container>
                 <p className="text-center link-s text-gray">
-                    Showing
-                    {' '}
-                    {posts.length}
-                    {' '}
-                    result
-                    {posts.length > 1 && 's'}
-                    {' '}
-                    for
+                    Showing {posts.length} result
+                    {posts.length > 1 && 's'} for
                 </p>
                 <h1 className="text-center mb-5 pb-5">{q}</h1>
             </Container>
@@ -82,7 +85,6 @@ const SearchPage = ({ location }) => {
                 <DiscoverMoreTopics tags={tags} primaryTag={{}} />
             </Container>
             <Footer />
-            <CookieInfo cookieText={siteMeta.allFlotiqMainSettings.nodes[0].cookie_policy_popup_text} />
         </main>
     );
 };
@@ -100,7 +102,10 @@ const query = graphql`
                 title
             }
         }
-        allFlotiqBlogPost(sort: {fields: publish_date, order: DESC}, limit: 10000) {
+        allFlotiqBlogPost(
+            sort: { fields: publish_date, order: DESC }
+            limit: 10000
+        ) {
             nodes {
                 tags {
                     id
@@ -110,6 +115,7 @@ const query = graphql`
                 }
             }
         }
-    }`;
+    }
+`;
 
 export default SearchPage;
