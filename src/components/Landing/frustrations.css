@@ -51,6 +51,8 @@
   font-size: 1.15rem;
   margin-top: var(--dl-space-space-halfunit);
   text-align: center;
+  padding-left: var(--dl-space-space-unit) ;
+  padding-right: var(--dl-space-space-unit)
 }
 .frustrations-stat2 {
   display: flex;
@@ -95,6 +97,8 @@
   }
   .frustrations-text06 {
     text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .frustrations-text09 {
     text-align: center;

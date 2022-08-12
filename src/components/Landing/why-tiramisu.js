@@ -55,6 +55,11 @@ const WhyTiramisu = (props) => {
                                 <span className="why-tiramisu-text10">
                                     🙋🏽‍♀️ Real
                                 </span>
+                                <span
+                                    dangerouslySetInnerHTML={{
+                                        __html: ' ',
+                                    }}
+                                />
                                 <span className="why-tiramisu-text11">
                                     human interaction
                                 </span>
