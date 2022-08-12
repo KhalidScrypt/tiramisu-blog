@@ -45,6 +45,10 @@ const IndexPage = (props) => {
                     content="Tiramisu - Social Network of Kindness"
                 />
                 <meta property="og:url" content={url} />
+                <meta
+                    property="og:image"
+                    content="https://api.flotiq.com/image/0x0/_media-3368bd15-9974-4a37-be1c-9cb433c9d8b9.png"
+                />
 
                 <meta property="article:publisher" content={facebookUrl} />
 
@@ -59,6 +63,10 @@ const IndexPage = (props) => {
                 <meta
                     name="twitter:site"
                     content={`@${twitterUrl.split('https://twitter.com/')[1]}`}
+                />
+                <meta
+                    name="twitter:image"
+                    content="https://api.flotiq.com/image/0x0/_media-3368bd15-9974-4a37-be1c-9cb433c9d8b9.png"
                 />
 
                 <meta

@@ -62,6 +62,10 @@ const BlogPage = ({ data, pageContext }) => {
                     content="Tiramisu - Social Network of Kindness"
                 />
                 <meta property="og:url" content={url} />
+                <meta
+                    property="og:image"
+                    content="https://api.flotiq.com/image/0x0/_media-63705353-0a2a-459a-b847-137b470fe114.png"
+                />
                 {data.allFlotiqMainSettings.nodes[0].facebook_url && (
                     <meta
                         property="article:publisher"
@@ -84,6 +88,10 @@ const BlogPage = ({ data, pageContext }) => {
                     content="Tiramisu - Social Network of Kindness"
                 />
                 <meta name="twitter:url" content={url} />
+                <meta
+                    property="twitter:image"
+                    content="https://api.flotiq.com/image/0x0/_media-63705353-0a2a-459a-b847-137b470fe114.png"
+                />
                 {data.allFlotiqMainSettings.nodes[0].twitter_url && (
                     <meta
                         name="twitter:site"
