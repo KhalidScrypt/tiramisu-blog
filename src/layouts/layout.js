@@ -27,12 +27,12 @@ const Layout = ({ children, navbarSettings = {}, mainSettings = {} }) => {
     })(document, window, 'SibConversations');`}
                 </script>
                 <script
-                    src="https://config.metomic.io/config.js?id=prj:deb2b370-bacf-4b55-a31a-6631b81fae99"
+                    src="https://config.confirmic.com/config.js?id=prj:deb2b370-bacf-4b55-a31a-6631b81fae99"
                     crossorigin
                     charset="utf-8"
                 ></script>
                 <script
-                    src="https://consent-manager.metomic.io/embed.js"
+                    src="https://consent-manager.confirmic.com/embed.js"
                     crossorigin
                     charset="utf-8"
                 ></script>
