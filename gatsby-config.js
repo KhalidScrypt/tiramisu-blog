@@ -70,7 +70,7 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-robots-txt',
             options: {
-                host: 'www.tiramisuapp.com',
+                host: 'https://www.tiramisuapp.com',
                 sitemap:
                     'https://www.tiramisuapp.com/sitemap/sitemap-index.xml',
                 policy: [{ userAgent: '*', allow: '/' }],
