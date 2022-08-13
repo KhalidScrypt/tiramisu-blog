@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { motion } from 'framer-motion';
+import moment from 'moment';
 
 import { getReadingTime } from '../../helpers/readingTime';
 import TagPill from '../TagPill/TagPill';
@@ -15,7 +16,12 @@ const PostCard = ({ post, showDescription, additionalClass }) => (
         transition={{ ease: 'easeIn', duration: 1 }}
     >
         <div>
-            <Link to={`/blog/${post.slug}`} className="post-card-link">
+            <Link
+                to={`/${moment(post.publish_date).format('YYYY/MM/DD')}/${
+                    post.slug
+                }`}
+                className="post-card-link"
+            >
                 {
                     // eslint-disable-next-line no-nested-ternary
                     post.headerImage ? (
@@ -41,7 +47,12 @@ const PostCard = ({ post, showDescription, additionalClass }) => (
                 {post.tags &&
                     post.tags.map((tag) => <TagPill tag={tag} key={tag.id} />)}
             </div>
-            <Link to={`/blog/${post.slug}`} className="post-card-link">
+            <Link
+                to={`/${moment(post.publish_date).format('YYYY/MM/DD')}/${
+                    post.slug
+                }`}
+                className="post-card-link"
+            >
                 <h2 className="mt-3">{post.title}</h2>
                 {showDescription && (
                     <div className="mt-3 post-card-description">
@@ -51,7 +62,12 @@ const PostCard = ({ post, showDescription, additionalClass }) => (
             </Link>
         </div>
         {post.content && typeof post.content === 'object' && (
-            <Link to={`/blog/${post.slug}`} className="post-card-link">
+            <Link
+                to={`/${moment(post.publish_date).format('YYYY/MM/DD')}/${
+                    post.slug
+                }`}
+                className="post-card-link"
+            >
                 <p className="mt-3 mb-3 reading-time">
                     {getReadingTime(post.content.blocks)}
                 </p>

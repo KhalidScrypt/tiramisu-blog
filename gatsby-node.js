@@ -16,6 +16,7 @@ exports.createPages = async ({ graphql, actions }) => {
                         id
                         slug
                         status
+                        publish_date
                         tags {
                             id
                             tag
@@ -110,11 +111,17 @@ exports.createPages = async ({ graphql, actions }) => {
 
     posts.forEach(({ node }, index) => {
         const { slug } = node;
+        const { publish_date } = node;
         const prev = index === 0 ? null : posts[index - 1].node;
         const next = index === posts.length - 1 ? null : posts[index + 1].node;
 
+        const splitDate = publish_date.split('-');
+        const year = splitDate[0];
+        const month = splitDate[1];
+        const day = splitDate[2];
+
         createPage({
-            path: `/blog/${slug}`,
+            path: `/${year}/${month}/${day}/${slug}`,
             component: path.resolve('./src/templates/post.js'),
             context: {
                 // Data passed to context is available in page queries as GraphQL variables.
