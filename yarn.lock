@@ -6144,6 +6144,14 @@
     "minimatch" "3.0.4"
     "web-vitals" "^1.1.2"
 
+"gatsby-plugin-google-gtag@^4.20.0":
+  "integrity" "sha512-+YK6UDmA76frkUganVi/CY6r7vBewxK3gnbRqRlNsxQWQe/WUGzk3OmBLHjca6WFlaLywGZ9bsNs8UxL9Ku1Ew=="
+  "resolved" "https://registry.npmjs.org/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-4.20.0.tgz"
+  "version" "4.20.0"
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    "minimatch" "^3.1.2"
+
 "gatsby-plugin-hotjar@^1.1.1":
   "integrity" "sha512-zEuZuZPokvBZvfKg7W0MjPoydFnD8NqhgB0Rm32A7HTWu44vvH+UYt0NsvnyINYmICS9ftv+y/k3WAAzkAIUNw=="
   "resolved" "https://registry.npmjs.org/gatsby-plugin-hotjar/-/gatsby-plugin-hotjar-1.1.1.tgz"
