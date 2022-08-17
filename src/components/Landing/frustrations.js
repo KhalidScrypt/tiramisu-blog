@@ -4,13 +4,11 @@ import PropTypes from 'prop-types';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { motion } from 'framer-motion';
+import VisibilitySensor from 'react-visibility-sensor';
 
 import './frustrations.css';
 
 const Frustrations = (props) => {
-    const percentage1 = 32;
-    const percentage2 = 30;
-
     return (
         <motion.div
             className="frustrations-frustrations"
@@ -22,44 +20,68 @@ const Frustrations = (props) => {
             <h1 className="frustrations-text heading2">{props.heading}</h1>
             <div className="frustrations-stats">
                 <div className="frustrations-stat">
-                    <CircularProgressbar
-                        className="circle-stats"
-                        value={percentage2}
-                        text={`${percentage1}%`}
-                        strokeWidth="5"
-                        styles={buildStyles({
-                            pathColor: '#93165d',
-                            textColor: '#93165d',
-                        })}
-                    />
+                    <VisibilitySensor>
+                        {({ isVisible }) => {
+                            const pcValue = isVisible ? 32 : 0;
+                            return (
+                                <CircularProgressbar
+                                    className="circle-stats"
+                                    value={pcValue}
+                                    text={`${pcValue}%`}
+                                    strokeWidth="5"
+                                    styles={buildStyles({
+                                        pathColor: '#93165d',
+                                        textColor: '#93165d',
+                                        pathTransitionDuration: 2,
+                                    })}
+                                />
+                            );
+                        }}
+                    </VisibilitySensor>
+
                     <span className="frustrations-text03">{props.text}</span>
                 </div>
                 <div className="frustrations-stat1">
-                    <CircularProgressbar
-                        className="circle-stats"
-                        value={percentage2}
-                        text={`${percentage2}%`}
-                        strokeWidth="5"
-                        styles={buildStyles({
-                            pathColor: '#93165d',
-                            textColor: '#93165d',
-                            pathTransitionDuration: 2,
-                        })}
-                    />
+                    <VisibilitySensor>
+                        {({ isVisible }) => {
+                            const pcValue = isVisible ? 30 : 0;
+                            return (
+                                <CircularProgressbar
+                                    className="circle-stats"
+                                    value={pcValue}
+                                    text={`${pcValue}%`}
+                                    strokeWidth="5"
+                                    styles={buildStyles({
+                                        pathColor: '#93165d',
+                                        textColor: '#93165d',
+                                        pathTransitionDuration: 1.6,
+                                    })}
+                                />
+                            );
+                        }}
+                    </VisibilitySensor>
 
                     <span className="frustrations-text06">{props.text1}</span>
                 </div>
                 <div className="frustrations-stat2">
-                    <CircularProgressbar
-                        className="circle-stats"
-                        value={percentage2}
-                        text={`${percentage2}%`}
-                        strokeWidth="5"
-                        styles={buildStyles({
-                            pathColor: '#93165d',
-                            textColor: '#93165d',
-                        })}
-                    />
+                    <VisibilitySensor>
+                        {({ isVisible }) => {
+                            const pcValue = isVisible ? 30 : 0;
+                            return (
+                                <CircularProgressbar
+                                    className="circle-stats"
+                                    value={pcValue}
+                                    text={`${pcValue}%`}
+                                    strokeWidth="5"
+                                    styles={buildStyles({
+                                        pathColor: '#93165d',
+                                        textColor: '#93165d',
+                                        pathTransitionDuration: 1.3,
+                                    })}
+                                />
+                            );
+                        }}
+                    </VisibilitySensor>
                     <span className="frustrations-text09">
                         <span>The number of ads I see</span>
                         <br></br>
