@@ -52,6 +52,10 @@ const BlogPage = ({ data, pageContext }) => {
                     rel="stylesheet"
                     href="https://sibforms.com/forms/end-form/build/sib-styles.css"
                 />
+                <link
+                    rel="canonical"
+                    href="https://www.tiramisuapp.com/blog/"
+                />
                 <meta
                     property="og:site_name"
                     content={data.allFlotiqMainSettings.nodes[0].title}

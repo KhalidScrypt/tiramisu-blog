@@ -338,6 +338,7 @@ export const query = graphql`
             excerpt
             title
             publish_date
+            slug
             content {
                 blocks {
                     data {
