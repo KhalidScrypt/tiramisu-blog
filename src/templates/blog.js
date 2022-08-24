@@ -35,9 +35,13 @@ const BlogPage = ({ data, pageContext }) => {
                 {pageContext.currentPage > 1 && (
                     <link
                         rel="prev"
-                        href={`${siteMeta.siteUrl}${siteMeta.pathPrefix}/${
-                            pageContext.currentPage - 1
-                        }`}
+                        href={
+                            pageContext.currentPage == 2
+                                ? `${siteMeta.siteUrl}${siteMeta.pathPrefix}/blog/`
+                                : `${siteMeta.siteUrl}${
+                                      siteMeta.pathPrefix
+                                  }/blog/${pageContext.currentPage - 1}`
+                        }
                     />
                 )}
                 {pageContext.currentPage + 1 < pageContext.numPages && (
