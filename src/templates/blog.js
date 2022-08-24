@@ -54,7 +54,14 @@ const BlogPage = ({ data, pageContext }) => {
                 />
                 <link
                     rel="canonical"
-                    href="https://www.tiramisuapp.com/blog/"
+                    href={
+                        'https://www.tiramisuapp.com/blog/' +
+                        `${
+                            pageContext.currentPage > 1
+                                ? `${pageContext.currentPage}`
+                                : ''
+                        }`
+                    }
                 />
                 <meta
                     property="og:site_name"
