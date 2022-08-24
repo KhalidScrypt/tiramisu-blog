@@ -8,9 +8,9 @@ import PostCard from '../components/PostCard/PostCard';
 import Layout from '../layouts/layout';
 
 const TagsPage = ({ data, pageContext }) => {
-    const tag = (pageContext.tag) ? pageContext.tag : '';
+    const tag = pageContext.tag ? pageContext.tag : '';
     const tagData = data.allFlotiqBlogTag.edges.find(
-        (n) => n.node.tag.toLowerCase() === tag.toLowerCase(),
+        (n) => n.node.tag.toLowerCase() === tag.toLowerCase()
     ).node;
     const [url, setUrl] = useState('');
     useEffect(() => {
@@ -26,7 +26,10 @@ const TagsPage = ({ data, pageContext }) => {
                     {data.allFlotiqMainSettings.nodes[0].title}
                 </title>
                 <meta name="description" content={tagData.description} />
-                <meta property="og:site_name" content={data.allFlotiqMainSettings.nodes[0].title} />
+                <meta
+                    property="og:site_name"
+                    content={data.allFlotiqMainSettings.nodes[0].title}
+                />
                 <meta property="og:type" content="website" />
                 <meta
                     property="og:title"
@@ -34,39 +37,58 @@ const TagsPage = ({ data, pageContext }) => {
                 />
                 <meta property="og:url" content={url} />
                 {data.allFlotiqMainSettings.nodes[0].facebook_url && (
-                    <meta property="article:publisher" content={data.allFlotiqMainSettings.nodes[0].facebook_url} />)}
+                    <meta
+                        property="article:publisher"
+                        content={
+                            data.allFlotiqMainSettings.nodes[0].facebook_url
+                        }
+                    />
+                )}
                 {data.allFlotiqMainSettings.nodes[0].facebook_url && (
-                    <meta property="article:author" content={data.allFlotiqMainSettings.nodes[0].facebook_url} />)}
+                    <meta
+                        property="article:author"
+                        content={
+                            data.allFlotiqMainSettings.nodes[0].facebook_url
+                        }
+                    />
+                )}
                 <meta name="twitter:card" content="summary" />
                 <meta
                     name="twitter:title"
                     content={`${tagData.tag_name} - ${data.allFlotiqMainSettings.nodes[0].title}`}
                 />
                 <meta name="twitter:url" content={url} />
-                {data.allFlotiqMainSettings.nodes[0].twitter_url
-                && (
+                {data.allFlotiqMainSettings.nodes[0].twitter_url && (
                     <meta
                         name="twitter:site"
-                        content={`@${data.allFlotiqMainSettings.nodes[0].twitter_url.split('https://twitter.com/')[1]}`}
+                        content={`@${
+                            data.allFlotiqMainSettings.nodes[0].twitter_url.split(
+                                'https://twitter.com/'
+                            )[1]
+                        }`}
                     />
                 )}
                 {data.allFlotiqMainSettings.nodes[0].twitter_url && (
                     <meta
                         name="twitter:creator"
-                        content={`@${data.allFlotiqMainSettings.nodes[0].twitter_url.split('https://twitter.com/')[1]}`}
+                        content={`@${
+                            data.allFlotiqMainSettings.nodes[0].twitter_url.split(
+                                'https://twitter.com/'
+                            )[1]
+                        }`}
                     />
                 )}
             </Helmet>
             <Container>
                 <h1 className="text-center pt-4 pb-4">{tagData.tag_name}</h1>
-                <h4 className="text-center pb-4">
-                    {tagData.description}
-                </h4>
+                <h4 className="text-center pb-4">{tagData.description}</h4>
             </Container>
             <Container fluid className="container-fluid__bigger-padding">
                 <Row xs={1} sm={1} md={3} lg={3}>
                     {data.allFlotiqBlogPost.nodes.map((post) => (
-                        <Col key={post.id}><PostCard post={post} /></Col>
+                        <Col key={post.id}>
+                            <PostCard post={post} />
+                        </Col>
                     ))}
                 </Row>
                 <DiscoverMoreTopics
@@ -81,7 +103,7 @@ const TagsPage = ({ data, pageContext }) => {
 export default TagsPage;
 
 export const pageQuery = graphql`
-    query($tag: String) {
+    query ($tag: String) {
         allFlotiqBlogTag {
             edges {
                 node {
@@ -93,13 +115,15 @@ export const pageQuery = graphql`
             }
         }
         allFlotiqBlogPost(
-            limit: 2000,
-            sort: {fields: [publish_date], order: DESC},
+            limit: 2000
+            sort: { fields: [publish_date], order: DESC }
             filter: {
-                tags: {elemMatch: {tag: {eq: $tag}}},
-                status: {eq: "public"}}
+                tags: { elemMatch: { tag: { eq: $tag } } }
+                status: { eq: "public" }
+            }
         ) {
             nodes {
+                publish_date
                 content {
                     blocks {
                         data {
