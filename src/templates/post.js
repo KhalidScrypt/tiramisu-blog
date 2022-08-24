@@ -50,11 +50,10 @@ const PostPage = ({ data, pageContext }) => {
     if (!post) {
         return <div>NO DATA</div>;
     }
-    const disqusConfig = {
-        url: `${data.site.siteMetadata.siteUrl}/${post.slug}`,
-        identifier: post.slug,
-        title: post.title,
-    };
+    const URL = `https://www.tiramisuapp.com/${moment(post.publish_date).format(
+        'YYYY/MM/DD'
+    )}/${post.slug}`;
+
     return (
         <Layout>
             <Helmet>
@@ -64,6 +63,7 @@ const PostPage = ({ data, pageContext }) => {
                     {' - '}
                     {data.allFlotiqMainSettings.nodes[0].title}
                 </title>
+                <link rel="canonical" href={URL} />
                 <meta name="description" content={post.metaDescription} />
                 <meta
                     property="og:site_name"
@@ -431,6 +431,7 @@ export const query = graphql`
                 excerpt
                 title
                 slug
+                publish_date
                 headerImage {
                     extension
                     url

@@ -38,6 +38,7 @@ const IndexPage = (props) => {
                     rel="stylesheet"
                     href="https://sibforms.com/forms/end-form/build/sib-styles.css"
                 />
+                <link rel="canonical" href="https://www.tiramisuapp.com" />
                 <meta property="og:site_name" content={title} />
                 <meta property="og:type" content="website" />
                 <meta
